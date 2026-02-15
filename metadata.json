@@ -1,0 +1,7 @@
+{
+  "name": "Voyageurs en Inde",
+  "description": "Premium tailor-made travel agency specializing in immersive Indian journeys, inspired by French bespoke models.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
