@@ -41,7 +41,7 @@ const MapPreview: React.FC<MapPreviewProps> = ({ points, id }) => {
     }).addTo(map);
 
     const latLngs = points.map(p => [p.lat, p.lng]);
-
+    
     // Draw route
     L.polyline(latLngs, {
       color: '#B37012',
@@ -54,23 +54,23 @@ const MapPreview: React.FC<MapPreviewProps> = ({ points, id }) => {
     points.forEach((p) => {
       const customIcon = L.divIcon({
         className: 'custom-div-icon',
-        html: `<div class="w-3 h-3 bg-slate-900 border-2 border-white rounded-full shadow-lg"></div>`,
-        iconSize: [12, 12],
-        iconAnchor: [6, 6]
+        html: `<div class="w-2.5 h-2.5 bg-slate-900 border-2 border-white rounded-full shadow-lg"></div>`,
+        iconSize: [10, 10],
+        iconAnchor: [5, 5]
       });
 
       L.marker([p.lat, p.lng], { icon: customIcon }).addTo(map)
-        .bindTooltip(`<span class="font-bold text-[8px] uppercase tracking-widest px-2 py-1">${p.label}</span>`, {
+        .bindTooltip(`<span class="font-bold text-[7px] uppercase tracking-widest px-1.5 py-0.5">${p.label}</span>`, {
           permanent: true,
           direction: 'top',
           className: 'map-label-tooltip',
-          offset: [0, -5]
+          offset: [0, -4]
         });
     });
 
     // Fit bounds with padding
     const bounds = L.latLngBounds(latLngs);
-    map.fitBounds(bounds, { padding: [40, 40] });
+    map.fitBounds(bounds, { padding: [30, 30] });
 
     return () => {
       if (mapRef.current) {
@@ -81,11 +81,12 @@ const MapPreview: React.FC<MapPreviewProps> = ({ points, id }) => {
   }, [points]);
 
   return (
-    <div className="relative w-full h-full overflow-hidden">
+    <div className="relative w-full h-full overflow-hidden bg-[#f8f9fa] animate-in fade-in duration-500">
       <div ref={mapContainerRef} className="w-full h-full" />
       <div className="leaflet-vignette" />
-      <div className="absolute top-4 left-4 z-[500]">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Google_Maps_Logo_2020.svg" className="w-6 h-6 opacity-40 grayscale" alt="Map Provider" />
+      <div className="absolute top-4 left-4 z-[500] opacity-30 flex items-center space-x-2">
+        <div className="w-2 h-2 bg-saffron rounded-full animate-pulse"></div>
+        <span className="text-[8px] font-bold uppercase tracking-widest text-slate-900">Itinéraire Interactif</span>
       </div>
     </div>
   );
@@ -102,39 +103,40 @@ const TripGrid: React.FC<TripGridProps> = ({ trips, onTripSelect, externalFilter
   const [hoveredTripId, setHoveredTripId] = useState<string | null>(null);
 
   const filters = [
-    { label: 'Tous nos voyages', value: 'all' },
-    { label: 'Nord', value: 'Nord' },
+    { label: 'Tout', value: 'all' },
     { label: 'Rajasthan', value: 'Rajasthan' },
-    { label: 'Sud', value: 'Sud' },
+    { label: 'Inde du Sud', value: 'Inde du Sud' },
     { label: 'Himalaya', value: 'Himalaya' },
-    { label: 'Culture', value: 'Culture' }
+    { label: 'Safari', value: 'Safari' }
   ];
 
   const filteredTrips = useMemo(() => {
     if (externalFilter === 'all') return trips;
-    return trips.filter(t =>
-      t.region.toLowerCase().includes(externalFilter.toLowerCase()) ||
+    return trips.filter(t => 
+      t.region.toLowerCase().includes(externalFilter.toLowerCase()) || 
       t.theme.toLowerCase().includes(externalFilter.toLowerCase())
     );
   }, [externalFilter, trips]);
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-24">
+    <section id="nos-voyages" className="max-w-7xl mx-auto px-6 py-24">
       <div className="flex flex-col items-center mb-16 space-y-8">
         <div className="text-center space-y-4">
-          <h2 className="text-4xl md:text-5xl font-serif">Inspirations Indiennes</h2>
-          <p className="text-slate-500 max-w-2xl mx-auto italic">Des itinéraires d'exception personnalisables.</p>
+          <span className="text-xs font-bold uppercase tracking-[0.3em] text-saffron">Nos Itinéraires</span>
+          <h2 className="text-4xl md:text-5xl font-serif">Inspirations de Voyage</h2>
+          <p className="text-slate-500 max-w-2xl mx-auto italic font-light">Architectes de l'évasion, nous avons conçu ces routes pour nourrir votre soif d'authenticité.</p>
         </div>
-
+        
         <div className="flex flex-wrap justify-center gap-2 border-b border-slate-100 pb-4">
           {filters.map(f => (
-            <button
+            <button 
               key={f.value}
               onClick={() => onFilterChange(f.value)}
-              className={`px-6 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all duration-300 ${externalFilter === f.value
-                  ? 'bg-saffron text-white shadow-xl shadow-saffron/20'
-                  : 'bg-transparent text-slate-400 hover:text-slate-900'
-                }`}
+              className={`px-6 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all duration-300 ${
+                externalFilter === f.value 
+                ? 'bg-slate-900 text-white shadow-xl shadow-slate-900/10' 
+                : 'bg-transparent text-slate-400 hover:text-slate-900'
+              }`}
             >
               {f.label}
             </button>
@@ -142,68 +144,68 @@ const TripGrid: React.FC<TripGridProps> = ({ trips, onTripSelect, externalFilter
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 min-h-[500px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[500px]">
         {filteredTrips.map((trip) => (
-          <div
-            key={trip.id}
-            className="group relative cursor-pointer bg-white overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-700 h-[450px]"
+          <div 
+            key={trip.id} 
+            className="group relative cursor-pointer bg-white overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 h-[480px] rounded-[1.5rem]"
             onMouseEnter={() => setHoveredTripId(trip.id)}
             onMouseLeave={() => setHoveredTripId(null)}
             onClick={() => onTripSelect(trip)}
           >
-            {/* --- DEFAULT STATE --- */}
-            <div className={`absolute inset-0 z-10 flex flex-col justify-end transition-opacity duration-500 ${hoveredTripId === trip.id ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-              <div className="absolute inset-0">
-                <img
-                  src={trip.image}
-                  alt={trip.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                <div className="absolute inset-0 backdrop-blur-[2px] opacity-20"></div>
-              </div>
-
-              <div className="relative p-10 text-white z-20">
-                <div className="text-[11px] font-black uppercase tracking-[0.2em] mb-3 opacity-90">
-                  {trip.duration} / {parseInt(trip.duration) - 1} NUITS
-                </div>
-                <h3 className="text-3xl md:text-4xl font-serif mb-6 leading-tight max-w-sm drop-shadow-sm">
-                  {trip.title}
-                </h3>
-                <div className="flex items-center justify-between pt-6 border-t border-white/20">
-                  <div className="text-lg">
-                    <span className="text-xs uppercase font-bold opacity-60 mr-2">À partir de</span>
-                    <span className="font-black font-serif text-2xl">{trip.price}€</span>
-                  </div>
-                  <div className="text-[11px] font-black uppercase tracking-widest flex items-center group-hover:translate-x-1 transition-transform">
-                    &gt; DÉCOUVRIR
-                  </div>
-                </div>
-              </div>
+            {/* --- IMAGE LAYER --- */}
+            <div className={`absolute inset-0 z-10 transition-all duration-700 ease-in-out ${hoveredTripId === trip.id ? 'opacity-0 scale-105' : 'opacity-100 scale-100'}`}>
+              <img 
+                src={trip.image || `https://placehold.co/800x1200?text=${trip.title.replace(/ /g, '+')}`} 
+                alt={trip.title}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = `https://placehold.co/800x1200/db8b21/ffffff?text=${trip.title.replace(/ /g, '+')}`;
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
             </div>
 
-            {/* --- HOVER STATE (REAL MAP) --- */}
-            <div className={`absolute inset-0 z-20 transition-opacity duration-700 ${hoveredTripId === trip.id ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-              {hoveredTripId === trip.id && trip.mapPoints && (
+            {/* --- MAP LAYER --- */}
+            <div className={`absolute inset-0 z-0 transition-all duration-700 ease-in-out ${hoveredTripId === trip.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              {trip.mapPoints && hoveredTripId === trip.id && (
                 <MapPreview points={trip.mapPoints} id={trip.id} />
               )}
+            </div>
 
-              {/* VOIR LE DÉTAIL Button - Centered at bottom like image request */}
-              <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-[600] animate-in slide-in-from-bottom-4 duration-500 delay-200">
-                <button className="bg-brown-btn text-white px-10 py-4 rounded-lg font-bold uppercase text-[11px] tracking-[0.2em] shadow-2xl hover:scale-105 active:scale-95 transition-all">
-                  VOIR LE DÉTAIL
-                </button>
+            {/* --- CONTENT LAYER --- */}
+            <div className="absolute inset-0 z-20 flex flex-col justify-end p-8 pointer-events-none">
+              <div className={`transition-all duration-500 ${hoveredTripId === trip.id ? 'translate-y-[-10px] opacity-0' : 'translate-y-0 opacity-100'}`}>
+                <div className="flex items-center space-x-3 mb-3">
+                   <span className="text-[10px] font-black uppercase tracking-[0.2em] text-saffron">{trip.duration}</span>
+                   <div className="w-1 h-1 bg-white/40 rounded-full"></div>
+                   <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/70">{trip.region}</span>
+                </div>
+                <h3 className="text-2xl font-serif text-white mb-6 leading-tight group-hover:text-white transition-colors drop-shadow-lg">
+                  {trip.title}
+                </h3>
+              </div>
+
+              <div className="flex items-center justify-between pt-6 border-t border-white/10 mt-auto">
+                <div className="text-white">
+                  <span className="text-[9px] uppercase font-bold opacity-60 mr-2">Dès</span>
+                  <span className="font-serif text-xl">{trip.price}€</span>
+                </div>
+                <div className={`pointer-events-auto flex items-center space-x-2 text-[9px] font-black uppercase tracking-widest px-4 py-2 rounded-full transition-all duration-500 ${hoveredTripId === trip.id ? 'bg-slate-900 text-white translate-x-0' : 'text-white translate-x-2'}`}>
+                  <span>{hoveredTripId === trip.id ? 'DÉTAILS' : 'DÉCOUVRIR'}</span>
+                  <span>→</span>
+                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
-
+      
       <style>{`
         .map-label-tooltip {
           background: white !important;
           border: 1px solid #e2e8f0 !important;
-          border-radius: 4px !important;
+          border-radius: 3px !important;
           box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1) !important;
           color: #0f172a !important;
           font-family: 'Inter', sans-serif !important;
