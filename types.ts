@@ -12,6 +12,14 @@ export interface MapPoint {
   label: string;
 }
 
+export interface ItineraryItem {
+  day: number;
+  title: string;
+  desc: string;
+  lat?: number;
+  lng?: number;
+}
+
 export interface Trip {
   id: string;
   title: string;
@@ -22,7 +30,7 @@ export interface Trip {
   image: string;
   description: string;
   highlights: string[];
-  itinerary: { day: number; title: string; desc: string }[];
+  itinerary: ItineraryItem[];
   mapPoints?: MapPoint[];
 }
 

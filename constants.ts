@@ -12,7 +12,15 @@ export const TRIPS: Trip[] = [
     image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=2000&auto=format&fit=crop',
     description: 'Une odyssée complète à travers la terre des rois. Des forts majestueux de Jodhpur aux palais flottants d\'Udaipur.',
     highlights: ['Bundi', 'Udaipur', 'Jodhpur', 'Jaisalmer'],
-    itinerary: [{ day: 1, title: 'Arrivée à Delhi', desc: 'Transfert privé vers votre hôtel de charme.' }],
+    itinerary: [
+      { day: 1, title: 'Arrivée à Delhi', desc: 'Transfert privé vers votre hôtel de charme.', lat: 28.6139, lng: 77.2090 },
+      { day: 3, title: 'Agra & Taj Mahal', desc: 'Lever de soleil sur le monument à l\'amour.', lat: 27.1767, lng: 78.0081 },
+      { day: 5, title: 'Jaipur, la Ville Rose', desc: 'Découverte du City Palace.', lat: 26.9124, lng: 75.7873 },
+      { day: 8, title: 'Bundi médiéval', desc: 'Exploration des puits à degrés.', lat: 25.4414, lng: 75.6375 },
+      { day: 12, title: 'Udaipur Romantique', desc: 'Dîner au bord du Lac Pichola.', lat: 24.5854, lng: 73.7125 },
+      { day: 15, title: 'Jodhpur, Cité Bleue', desc: 'Visite du Fort de Mehrangarh.', lat: 26.2389, lng: 73.0243 },
+      { day: 18, title: 'Dunes de Jaisalmer', desc: 'Nuit sous les étoiles dans le désert.', lat: 26.9157, lng: 70.9160 }
+    ],
     mapPoints: [
       { lat: 28.6139, lng: 77.2090, label: 'Delhi' },
       { lat: 27.1767, lng: 78.0081, label: 'Agra' },
@@ -33,7 +41,11 @@ export const TRIPS: Trip[] = [
     image: 'https://images.unsplash.com/photo-1524226493460-d7833966b5ea?q=80&w=2000&auto=format&fit=crop',
     description: 'Explorez le Shekhawati et ses havelis peints avant de plonger dans le silence éternel du désert.',
     highlights: ['Mandawa', 'Bikaner', 'Jaisalmer', 'Nagaur'],
-    itinerary: [{ day: 1, title: 'Delhi - Mandawa', desc: 'Départ pour la région du Shekhawati.' }],
+    itinerary: [
+      { day: 1, title: 'Delhi - Mandawa', desc: 'Départ pour la région du Shekhawati.', lat: 28.6139, lng: 77.2090 },
+      { day: 2, title: 'Havelis de Mandawa', desc: 'Fresques murales exceptionnelles.', lat: 28.0513, lng: 75.1504 },
+      { day: 4, title: 'Bikaner Impériale', desc: 'Visite du Fort Junagarh.', lat: 28.0222, lng: 73.3119 }
+    ],
     mapPoints: [
       { lat: 28.6139, lng: 77.2090, label: 'Delhi' },
       { lat: 28.0513, lng: 75.1504, label: 'Mandawa' },
@@ -53,7 +65,10 @@ export const TRIPS: Trip[] = [
     image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2000&auto=format&fit=crop',
     description: 'Le meilleur du Nord et du Sud. Des palais moghols d\'Agra aux backwaters tropicaux du Kerala.',
     highlights: ['Taj Mahal', 'Udaipur', 'Cochin', 'Munnar'],
-    itinerary: [{ day: 1, title: 'Delhi', desc: 'Arrivée et accueil traditionnel.' }],
+    itinerary: [
+      { day: 1, title: 'Delhi', desc: 'Arrivée et accueil traditionnel.', lat: 28.6139, lng: 77.2090 },
+      { day: 9, title: 'Cochin', desc: 'Installation au port historique.', lat: 9.9312, lng: 76.2673 }
+    ],
     mapPoints: [
       { lat: 28.6139, lng: 77.2090, label: 'Delhi' },
       { lat: 27.1767, lng: 78.0081, label: 'Agra' },
@@ -73,7 +88,10 @@ export const TRIPS: Trip[] = [
     image: 'https://images.unsplash.com/photo-1518644730709-0835104d9daa?q=80&w=2000&auto=format&fit=crop',
     description: 'Un pèlerinage du Temple d\'Or d\'Amritsar aux sources du Gange à Rishikesh.',
     highlights: ['Amritsar', 'Dharamsala', 'Rishikesh', 'Haridwar'],
-    itinerary: [{ day: 1, title: 'Delhi - Amritsar', desc: 'Envol pour la cité sainte des Sikhs.' }],
+    itinerary: [
+      { day: 1, title: 'Delhi - Amritsar', desc: 'Envol pour la cité sainte des Sikhs.', lat: 31.6340, lng: 74.8723 },
+      { day: 8, title: 'Rishikesh Yoga', desc: 'Sérénité au bord du fleuve.', lat: 30.0869, lng: 78.2676 }
+    ],
     mapPoints: [
       { lat: 28.6139, lng: 77.2090, label: 'Delhi' },
       { lat: 31.6340, lng: 74.8723, label: 'Amritsar' },
@@ -92,7 +110,10 @@ export const TRIPS: Trip[] = [
     image: 'https://images.unsplash.com/photo-1512100356956-c1b47ca40115?q=80&w=2000&auto=format&fit=crop',
     description: 'Découvrez le dynamisme de Bombay et Hyderabad avant de vous relaxer sur les rivages de Goa.',
     highlights: ['Hyderabad', 'Goa', 'Bombay', 'Lucknow'],
-    itinerary: [{ day: 1, title: 'Delhi - Lucknow', desc: 'Départ pour la cité des Nawabs.' }],
+    itinerary: [
+      { day: 1, title: 'Delhi - Lucknow', desc: 'Départ pour la cité des Nawabs.', lat: 26.8467, lng: 80.9462 },
+      { day: 5, title: 'Goa Relax', desc: 'Sable blanc et églises coloniales.', lat: 15.2993, lng: 74.1240 }
+    ],
     mapPoints: [
       { lat: 28.6139, lng: 77.2090, label: 'Delhi' },
       { lat: 26.8467, lng: 80.9462, label: 'Lucknow' },
@@ -111,7 +132,10 @@ export const TRIPS: Trip[] = [
     image: 'https://images.unsplash.com/photo-1517244683847-7456b63c5969?q=80&w=2000&auto=format&fit=crop',
     description: 'Une boucle culturelle reliant les palais de Jaipur aux temples mystiques de Varanasi.',
     highlights: ['Jaipur', 'Agra', 'Khajuraho', 'Varanasi'],
-    itinerary: [{ day: 1, title: 'Delhi - Neemrana', desc: 'Nuit dans le fort de Neemrana.' }],
+    itinerary: [
+      { day: 1, title: 'Delhi - Neemrana', desc: 'Nuit dans le fort de Neemrana.', lat: 28.0000, lng: 76.3833 },
+      { day: 8, title: 'Varanasi Aarti', desc: 'Cérémonie sacrée sur le Gange.', lat: 25.3176, lng: 82.9739 }
+    ],
     mapPoints: [
       { lat: 28.6139, lng: 77.2090, label: 'Delhi' },
       { lat: 26.9124, lng: 75.7873, label: 'Jaipur' },
@@ -130,7 +154,10 @@ export const TRIPS: Trip[] = [
     image: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=2000&auto=format&fit=crop',
     description: 'Prenez le temps de vivre l\'Inde rurale dans des forts et palais méconnus hors des sentiers battus.',
     highlights: ['Nagaur', 'Narlai', 'Bundi', 'Udaipur'],
-    itinerary: [{ day: 1, title: 'Delhi - Mandawa', desc: 'Immersion en terre Shekhawati.' }],
+    itinerary: [
+      { day: 5, title: 'Nagaur Fort', desc: 'Séjour dans les tentes de luxe du fort.', lat: 27.1983, lng: 73.7493 },
+      { day: 10, title: 'Narlai Village', desc: 'Marche au léopard au coucher du soleil.', lat: 25.3188, lng: 73.5358 }
+    ],
     mapPoints: [
       { lat: 28.6139, lng: 77.2090, label: 'Delhi' },
       { lat: 28.0513, lng: 75.1504, label: 'Mandawa' },
@@ -149,7 +176,10 @@ export const TRIPS: Trip[] = [
     image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=2000&auto=format&fit=crop',
     description: 'Une épopée monumentale de Bombay aux temples colorés du Tamil Nadu.',
     highlights: ['Udaipur', 'Bombay', 'Cochin', 'Madurai'],
-    itinerary: [{ day: 1, title: 'Nord', desc: 'Patrimoine mondial.' }],
+    itinerary: [
+      { day: 5, title: 'Bombay Dreams', desc: 'Dhingy ride in the harbor.', lat: 19.0760, lng: 72.8777 },
+      { day: 15, title: 'Madurai Temple', desc: 'Meenakshi Temple exploration.', lat: 9.9252, lng: 78.1198 }
+    ],
     mapPoints: [
       { lat: 28.6139, lng: 77.2090, label: 'Delhi' },
       { lat: 24.5854, lng: 73.7125, label: 'Udaipur' },
@@ -169,7 +199,10 @@ export const TRIPS: Trip[] = [
     image: 'https://images.unsplash.com/photo-1627581105151-6c2e71810508?q=80&w=2000&auto=format&fit=crop',
     description: 'L\'architecture dravidienne spectaculaire et la douceur de vivre du Kerala.',
     highlights: ['Mahabalipuram', 'Madurai', 'Periyar', 'Cochin'],
-    itinerary: [{ day: 1, title: 'Chennai', desc: 'Accueil tamoul chaleureux.' }],
+    itinerary: [
+      { day: 2, title: 'Mahabalipuram Shore', desc: 'Stone carving heritage.', lat: 12.6208, lng: 80.1945 },
+      { day: 5, title: 'Pondichery French Quarter', desc: 'Cafe culture and colonial charm.', lat: 11.9416, lng: 79.8083 }
+    ],
     mapPoints: [
       { lat: 13.0827, lng: 80.2707, label: 'Chennai' },
       { lat: 12.6208, lng: 80.1945, label: 'Mahabalipuram' },
@@ -185,10 +218,13 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '20 Jours',
     price: 5100,
-    image: 'https://images.unsplash.com/photo-1548013146-72479768bbaa?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1548013146-72479768bbaa?q=80&w=1200&auto=format&fit=crop',
     description: 'De l\'incroyable site de Hampi aux stations de montagne de l\'Ooty.',
     highlights: ['Hampi', 'Mysore', 'Ooty', 'Cochin'],
-    itinerary: [{ day: 1, title: 'Bangalore', desc: 'Arrivée dans la cité jardin.' }],
+    itinerary: [
+      { day: 4, title: 'Hampi Ruins', desc: 'A landscape of boulders and empires.', lat: 15.3350, lng: 76.4600 },
+      { day: 10, title: 'Mysore Palace', desc: 'Lighting up the royal history.', lat: 12.2958, lng: 76.6394 }
+    ],
     mapPoints: [
       { lat: 12.9716, lng: 77.5946, label: 'Bangalore' },
       { lat: 15.3350, lng: 76.4600, label: 'Hampi' },
@@ -207,7 +243,10 @@ export const TRIPS: Trip[] = [
     image: 'https://images.unsplash.com/photo-1616190419596-e2839e9580a7?q=80&w=2000&auto=format&fit=crop',
     description: 'Découvrez les trésors cachés du Madhya Pradesh et les grottes d\'Ajanta & Ellora.',
     highlights: ['Sanchi', 'Bhopal', 'Ajanta', 'Ellora'],
-    itinerary: [{ day: 1, title: 'Delhi - Agra', desc: 'Retrouvez le Taj Mahal.' }],
+    itinerary: [
+      { day: 5, title: 'Sanchi Stupa', desc: 'Buddhist history preserved.', lat: 23.4811, lng: 77.7397 },
+      { day: 12, title: 'Ajanta Caves', desc: 'Masterpieces of ancient art.', lat: 20.5519, lng: 75.7033 }
+    ],
     mapPoints: [
       { lat: 28.6139, lng: 77.2090, label: 'Delhi' },
       { lat: 27.1767, lng: 78.0081, label: 'Agra' },
@@ -226,7 +265,10 @@ export const TRIPS: Trip[] = [
     image: 'https://images.unsplash.com/photo-1550961811-94943f054790?q=80&w=2000&auto=format&fit=crop',
     description: 'Une expédition sauvage dans les meilleurs parcs nationaux d\'Inde Centrale.',
     highlights: ['Kanha', 'Bandhavgarh', 'Ranthambore', 'Jaipur'],
-    itinerary: [{ day: 1, title: 'Delhi', desc: 'Vers les jungles du Madhya Pradesh.' }],
+    itinerary: [
+      { day: 3, title: 'Kanha Jungle', desc: 'Looking for Sher Khan.', lat: 22.3331, lng: 80.6111 },
+      { day: 8, title: 'Ranthambore Fort', desc: 'History in the wild.', lat: 26.0173, lng: 76.5026 }
+    ],
     mapPoints: [
       { lat: 28.6139, lng: 77.2090, label: 'Delhi' },
       { lat: 22.3331, lng: 80.6111, label: 'Kanha' },
@@ -245,7 +287,10 @@ export const TRIPS: Trip[] = [
     image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2000&auto=format&fit=crop',
     description: 'Une courte évasion entre lagunes tranquilles et plages de sable fin.',
     highlights: ['Cochin', 'Backwaters', 'Marari Beach'],
-    itinerary: [{ day: 1, title: 'Cochin', desc: 'Accueil et transfert.' }],
+    itinerary: [
+      { day: 1, title: 'Cochin', desc: 'Accueil et transfert.', lat: 9.9312, lng: 76.2673 },
+      { day: 3, title: 'Backwaters', desc: 'Nuit sur un Houseboat.', lat: 9.4981, lng: 76.3388 }
+    ],
     mapPoints: [
       { lat: 9.9312, lng: 76.2673, label: 'Cochin' },
       { lat: 9.4981, lng: 76.3388, label: 'Alleppey' },
@@ -263,7 +308,10 @@ export const TRIPS: Trip[] = [
     image: 'https://images.unsplash.com/photo-1561361058-c24cecae35ca?q=80&w=2000&auto=format&fit=crop',
     description: 'Séjournez dans les plus beaux lodges d\'Asie alliant confort ultime et safari.',
     highlights: ['Ajabgarh', 'Ranthambore', 'Jaipur', 'Delhi'],
-    itinerary: [{ day: 1, title: 'Delhi', desc: 'Service de conciergerie VIP.' }],
+    itinerary: [
+      { day: 2, title: 'Aman-i-Khas', desc: 'Tented luxury at its finest.', lat: 26.0173, lng: 76.5026 },
+      { day: 5, title: 'Amanbagh', desc: 'A rose-hued oasis of serenity.', lat: 27.4124, lng: 76.2163 }
+    ],
     mapPoints: [
       { lat: 28.6139, lng: 77.2090, label: 'Delhi' },
       { lat: 27.4124, lng: 76.2163, label: 'Ajabgarh' },
@@ -281,7 +329,10 @@ export const TRIPS: Trip[] = [
     image: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2000&auto=format&fit=crop',
     description: 'L\'essentiel de l\'Inde du Nord sublimé par une nuit dans le palais de Samode.',
     highlights: ['Delhi', 'Samode', 'Jaipur', 'Agra'],
-    itinerary: [{ day: 1, title: 'Delhi', desc: 'Début du périple.' }],
+    itinerary: [
+      { day: 2, title: 'Samode Palace', desc: 'Un palais familial magnifique.', lat: 27.3117, lng: 75.8169 },
+      { day: 7, title: 'Agra Fort', desc: 'Mughal power in red sandstone.', lat: 27.1767, lng: 78.0081 }
+    ],
     mapPoints: [
       { lat: 28.6139, lng: 77.2090, label: 'Delhi' },
       { lat: 27.3117, lng: 75.8169, label: 'Samode' },
@@ -299,7 +350,10 @@ export const TRIPS: Trip[] = [
     image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=2000&auto=format&fit=crop',
     description: 'Une immersion dans l\'Inde princière avec des séjours dans des palais forteresses.',
     highlights: ['Jodhpur', 'Udaipur', 'Devigarh', 'Jaipur'],
-    itinerary: [{ day: 1, title: 'Delhi', desc: 'Envol vers le Rajasthan.' }],
+    itinerary: [
+      { day: 4, title: 'Udaipur City Palace', desc: 'History overlooking the lake.', lat: 24.5854, lng: 73.7125 },
+      { day: 7, title: 'Devigarh Fortress', desc: 'Contemporary luxury in a 18th century fort.', lat: 24.7500, lng: 73.7200 }
+    ],
     mapPoints: [
       { lat: 28.6139, lng: 77.2090, label: 'Delhi' },
       { lat: 26.2389, lng: 73.0243, label: 'Jodhpur' },
