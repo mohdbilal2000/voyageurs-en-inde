@@ -12,12 +12,12 @@ const GuideSection: React.FC<GuideSectionProps> = ({ fullPage = false }) => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between mb-16">
           <div className="max-w-lg mb-8 md:mb-0">
-            <h2 className="text-4xl font-serif mb-4">The Explorer's Journal</h2>
-            <p className="text-slate-500">Insights, advice, and stories from our experts to help you prepare for your next great adventure.</p>
+            <h2 className="text-4xl font-serif mb-4">Le Journal du Voyageur</h2>
+            <p className="text-slate-500">Conseils, récits et inspirations de nos experts pour préparer votre prochain voyage en Inde.</p>
           </div>
           {!fullPage && (
             <button className="text-slate-900 font-bold border-b-2 border-slate-900 pb-1 uppercase text-xs tracking-widest hover:text-slate-600 hover:border-slate-300 transition-all">
-              View All Guides
+              Voir tous les guides
             </button>
           )}
         </div>
@@ -43,7 +43,7 @@ const GuideSection: React.FC<GuideSectionProps> = ({ fullPage = false }) => {
                 {guide.excerpt}
               </p>
               <div className="inline-flex items-center text-slate-900 font-bold text-xs uppercase tracking-widest border-b border-transparent group-hover:border-slate-900 transition-all pb-1">
-                Read the guide
+                Lire l'article
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </div>
             </article>

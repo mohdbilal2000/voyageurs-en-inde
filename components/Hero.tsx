@@ -18,7 +18,7 @@ const Hero: React.FC<HeroProps> = ({ onRequestQuote }) => {
       {/* Background with subtle Zoom Effect */}
       <div className="absolute inset-0">
         <img 
-          src="https://images.unsplash.com/photo-1548013146-72479768bbaa?q=80&w=2500&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2500&auto=format&fit=crop"
           alt="Taj Mahal Sunrise"
           className="w-full h-full object-cover animate-in fade-in duration-1000 zoom-in-105"
         />
@@ -34,8 +34,8 @@ const Hero: React.FC<HeroProps> = ({ onRequestQuote }) => {
         </div>
         
         <h1 className="text-6xl md:text-9xl text-white font-serif leading-[1] mb-12 animate-in fade-in duration-1000 delay-300">
-          Vivez l’Inde <br /> 
-          <span className="italic font-normal">en baroudeur chic.</span>
+          La Vie Sauvage <br /> 
+          <span className="italic font-normal">Avec Voyageurs en Inde</span>
         </h1>
         
         {/* Search Bar / Action Bar */}

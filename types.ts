@@ -49,7 +49,7 @@ export interface Region {
 
 export interface Guide {
   id: string;
-  category: 'Visa' | 'Weather' | 'Culture' | 'Travel Tips';
+  category: 'Visa' | 'Météo' | 'Culture' | 'Conseils';
   title: string;
   excerpt: string;
   image: string;
