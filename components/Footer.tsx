@@ -1,9 +1,13 @@
 
 import React, { useState } from 'react';
+import LegalModal from './LegalModal';
+
+type LegalPage = 'privacy' | 'cgv' | 'mentions';
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const [legalPage, setLegalPage] = useState<LegalPage | null>(null);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -85,29 +89,37 @@ const Footer: React.FC = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-bold uppercase tracking-widest text-[10px] mb-8 text-slate-400">La Conciergerie</h4>
+            <h4 className="font-bold uppercase tracking-widest text-[10px] mb-8 text-slate-400">Nous Contacter</h4>
             <ul className="space-y-4 text-sm text-slate-500">
-              <li>Siège Paris, 14 Avenue Montaigne</li>
-              <li className="text-slate-900 font-medium">+33 (0)1 45 67 89 00</li>
-              <li className="text-slate-900 font-medium underline cursor-pointer">concierge@voyageurs-inde.com</li>
+              <li>Taj Nagari Phase-2, pres de Marriott Hotel</li>
+              <li>Agra 282001, Uttar Pradesh, Inde</li>
+              <li>
+                <a href="tel:+917505833393" className="text-slate-900 font-medium hover:text-saffron transition-colors">+91 750 583 3393</a>
+              </li>
+              <li>
+                <a href="https://wa.me/917505833393" target="_blank" rel="noopener noreferrer" className="text-slate-900 font-medium hover:text-saffron transition-colors">WhatsApp</a>
+              </li>
+              <li>
+                <a href="mailto:tajguides@gmail.com" className="text-slate-900 font-medium underline cursor-pointer hover:text-saffron transition-colors">tajguides@gmail.com</a>
+              </li>
               <li className="pt-6 flex space-x-6">
-                 <span className="cursor-pointer hover:text-saffron text-[10px] font-bold uppercase tracking-widest">IG</span>
-                 <span className="cursor-pointer hover:text-saffron text-[10px] font-bold uppercase tracking-widest">LI</span>
-                 <span className="cursor-pointer hover:text-saffron text-[10px] font-bold uppercase tracking-widest">FB</span>
+                 <a href="https://www.tripadvisor.com" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-saffron text-[10px] font-bold uppercase tracking-widest">TripAdvisor</a>
+                 <a href="https://wa.me/917505833393" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-saffron text-[10px] font-bold uppercase tracking-widest">WhatsApp</a>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-slate-200 text-[9px] text-slate-400 font-bold uppercase tracking-widest space-y-4 md:space-y-0">
-          <p>© 2024 Voyageurs en Inde. Tous droits réservés.</p>
+          <p>© 2026 Voyageurs en Inde. Tous droits réservés.</p>
           <div className="flex space-x-6">
-            <span className="cursor-pointer hover:text-slate-900 transition-colors">Politique de Confidentialité</span>
-            <span className="cursor-pointer hover:text-slate-900 transition-colors">CGV</span>
-            <span className="cursor-pointer hover:text-slate-900 transition-colors">Mentions Légales</span>
+            <span className="cursor-pointer hover:text-slate-900 transition-colors" onClick={() => setLegalPage('privacy')}>Politique de Confidentialite</span>
+            <span className="cursor-pointer hover:text-slate-900 transition-colors" onClick={() => setLegalPage('cgv')}>CGV</span>
+            <span className="cursor-pointer hover:text-slate-900 transition-colors" onClick={() => setLegalPage('mentions')}>Mentions Legales</span>
           </div>
         </div>
       </div>
+      {legalPage && <LegalModal page={legalPage} onClose={() => setLegalPage(null)} />}
     </footer>
   );
 };
