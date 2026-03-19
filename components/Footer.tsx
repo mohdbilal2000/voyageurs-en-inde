@@ -91,8 +91,8 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold uppercase tracking-widest text-[10px] mb-8 text-slate-400">Nous Contacter</h4>
             <ul className="space-y-4 text-sm text-slate-500">
-              <li>Taj Nagari Phase-2, pres de Marriott Hotel</li>
-              <li>Agra 282001, Uttar Pradesh, Inde</li>
+              <li>45 Sai Vihar, Pushpanjali Puram Ph-1</li>
+              <li>Near Hotel Marriott, Agra 282001, Inde</li>
               <li>
                 <a href="tel:+917505833393" className="text-slate-900 font-medium hover:text-saffron transition-colors">+91 750 583 3393</a>
               </li>

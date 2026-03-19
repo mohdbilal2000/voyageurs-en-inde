@@ -133,13 +133,15 @@ const MentionsContent = () => (
     <ul className="list-none space-y-1">
       <li><strong>Raison sociale :</strong> Taj Guides & Travel Services</li>
       <li><strong>Nom commercial :</strong> Voyageurs en Inde</li>
-      <li><strong>Adresse :</strong> 43/k 472/P-6, Taj Nagari Phase-2, pres de Marriott Hotel, Agra 282001, Uttar Pradesh, Inde</li>
-      <li><strong>Telephone :</strong> +91 750 583 3393</li>
+      <li><strong>Adresse :</strong> 45 Sai Vihar, Pushpanjali Puram Ph-1, Near Hotel Marriott, Agra 282001, Uttar Pradesh, Inde</li>
+      <li><strong>Directeur :</strong> Shafiq Khan</li>
+      <li><strong>Telephone :</strong> <a href="tel:+917505833393" className="text-saffron underline">+91 750 583 3393</a></li>
       <li><strong>Email :</strong> <a href="mailto:tajguides@gmail.com" className="text-saffron underline">tajguides@gmail.com</a></li>
+      <li><strong>Site :</strong> <a href="https://tajmahaltouristguide.com" target="_blank" rel="noopener noreferrer" className="text-saffron underline">tajmahaltouristguide.com</a></li>
     </ul>
 
     <SectionTitle>Statut</SectionTitle>
-    <p>Agence de voyage agree par le Ministere du Tourisme et de la Culture, Gouvernement de l'Inde. Autorise a exercer en tant que guide touristique / interprete aupres des visiteurs etrangers en Inde.</p>
+    <p>Agence de voyage agreee par le Ministere du Tourisme et de la Culture, Gouvernement de l'Inde. Guide touristique professionnel francophone et anglophone autorise a exercer aupres des visiteurs etrangers en Inde. En activite depuis 1998.</p>
 
     <SectionTitle>Hebergement du site</SectionTitle>
     <ul className="list-none space-y-1">
