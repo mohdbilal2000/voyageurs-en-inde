@@ -20,42 +20,78 @@ const DetailMap: React.FC<DetailMapProps> = ({ points, activeLocation }) => {
 
     if (!mapRef.current) {
       const map = L.map(mapContainerRef.current, {
-        zoomControl: true,
+        zoomControl: false,
         attributionControl: false,
         scrollWheelZoom: false,
       });
 
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      // CartoDB Voyager tiles — closest to Google Maps
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
         maxZoom: 19
       }).addTo(map);
 
       mapRef.current = map;
 
       const latLngs = points.map(p => [p.lat, p.lng]);
+
+      // White halo behind route
       L.polyline(latLngs, {
-        color: '#B37012',
-        weight: 3,
-        opacity: 0.6,
-        dashArray: '5, 10'
+        color: 'rgba(255,255,255,0.6)',
+        weight: 7,
+        opacity: 1,
+      }).addTo(map);
+
+      // Google Maps blue route
+      L.polyline(latLngs, {
+        color: '#4285F4',
+        weight: 4,
+        opacity: 0.95,
       }).addTo(map);
 
       points.forEach((p, idx) => {
-        const markerIcon = L.divIcon({
-          className: 'custom-detail-marker',
-          html: `<div class="marker-dot w-3 h-3 bg-slate-900 border-2 border-white rounded-full shadow-lg"></div>`,
-          iconSize: [12, 12],
-          iconAnchor: [6, 6]
-        });
+        const isFirst = idx === 0;
+        const isLast = idx === points.length - 1;
 
-        const marker = L.marker([p.lat, p.lng], { icon: markerIcon }).addTo(map)
-          .bindTooltip(`<span class="font-bold text-[10px] uppercase tracking-widest px-2 py-1">${p.label}</span>`, {
-            permanent: true,
-            direction: 'top',
-            offset: [0, -5],
-            className: 'detail-map-tooltip'
+        if (isFirst || isLast) {
+          // Google Maps teardrop pin for start/end
+          const pinColor = isFirst ? '#34A853' : '#EA4335';
+          const pinSvg = `
+            <svg width="28" height="40" viewBox="0 0 24 34" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 2px 4px rgba(0,0,0,0.35))">
+              <path d="M12 0C5.373 0 0 5.373 0 12C0 20.667 12 34 12 34C12 34 24 20.667 24 12C24 5.373 18.627 0 12 0Z" fill="${pinColor}"/>
+              <circle cx="12" cy="12" r="6" fill="white"/>
+            </svg>`;
+          const icon = L.divIcon({
+            className: '',
+            html: `<div>${pinSvg}</div>`,
+            iconSize: [28, 40],
+            iconAnchor: [14, 40],
+            popupAnchor: [0, -42]
           });
-        
-        markersRef.current.set(`${p.lat}-${p.lng}`, marker);
+          const marker = L.marker([p.lat, p.lng], { icon }).addTo(map)
+            .bindTooltip(`<div class="gmaps-detail-label"><strong>${p.label}</strong></div>`, {
+              permanent: true,
+              direction: isFirst ? 'right' : 'left',
+              className: 'gmaps-detail-tip',
+              offset: isFirst ? [8, -20] : [-8, -20]
+            });
+          markersRef.current.set(`${p.lat}-${p.lng}`, marker);
+        } else {
+          // Small blue circle for intermediate stops
+          const icon = L.divIcon({
+            className: '',
+            html: `<div class="marker-dot" style="width:12px;height:12px;background:#4285F4;border:2.5px solid white;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.3);transition:all 0.4s ease"></div>`,
+            iconSize: [12, 12],
+            iconAnchor: [6, 6],
+          });
+          const marker = L.marker([p.lat, p.lng], { icon }).addTo(map)
+            .bindTooltip(`<div class="gmaps-detail-label-sm">${p.label}</div>`, {
+              permanent: false,
+              direction: 'top',
+              className: 'gmaps-detail-tip-sm',
+              offset: [0, -8]
+            });
+          markersRef.current.set(`${p.lat}-${p.lng}`, marker);
+        }
       });
 
       const bounds = L.latLngBounds(latLngs);
@@ -67,14 +103,25 @@ const DetailMap: React.FC<DetailMapProps> = ({ points, activeLocation }) => {
         animate: true,
         duration: 1.5
       });
-      
+
       // Visual feedback on the active marker
       markersRef.current.forEach((marker, key) => {
         const markerEl = marker.getElement();
-        if (key === `${activeLocation.lat}-${activeLocation.lng}`) {
-          markerEl?.classList.add('marker-active');
-        } else {
-          markerEl?.classList.remove('marker-active');
+        if (markerEl) {
+          const dot = markerEl.querySelector('.marker-dot');
+          if (key === `${activeLocation.lat}-${activeLocation.lng}`) {
+            if (dot) {
+              dot.style.background = '#FBBC04';
+              dot.style.transform = 'scale(1.8)';
+              dot.style.boxShadow = '0 0 0 8px rgba(251,188,4,0.25)';
+            }
+          } else {
+            if (dot) {
+              dot.style.background = '#4285F4';
+              dot.style.transform = 'scale(1)';
+              dot.style.boxShadow = '0 1px 4px rgba(0,0,0,0.3)';
+            }
+          }
         }
       });
     }
@@ -82,28 +129,84 @@ const DetailMap: React.FC<DetailMapProps> = ({ points, activeLocation }) => {
   }, [points, activeLocation]);
 
   return (
-    <div className="relative w-full h-full bg-[#f8f9fa] rounded-[2rem] overflow-hidden shadow-inner border border-slate-100">
-      <div ref={mapContainerRef} className="w-full h-full" />
-      <div className="absolute top-6 left-6 z-[500]">
-        <div className="bg-white/90 backdrop-blur px-4 py-2 rounded-full border border-slate-200 shadow-sm flex items-center space-x-2">
-          <div className="w-2 h-2 bg-saffron rounded-full animate-pulse"></div>
-          <span className="text-[9px] font-black uppercase tracking-widest text-slate-900">Carte du Périple</span>
+    <div className="relative w-full h-full bg-[#e8eaed] rounded-2xl overflow-hidden shadow-lg border border-slate-200">
+      {/* Google Maps style header */}
+      <div className="absolute top-0 left-0 right-0 z-[500] flex items-center bg-white shadow-md px-4 py-2.5 space-x-2" style={{ minHeight: 42 }}>
+        <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" style={{ fill: '#4285F4' }}>
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+        <span className="text-[12px] font-medium text-slate-700 truncate flex-1">Carte du Voyage</span>
+        <span className="text-[10px] text-slate-400 flex-shrink-0">{points.length} etapes</span>
+      </div>
+
+      {/* Map canvas */}
+      <div ref={mapContainerRef} className="absolute inset-0 top-[42px] bottom-[36px]" />
+
+      {/* Google Maps zoom controls */}
+      <div className="absolute right-3 top-14 z-[500] bg-white rounded shadow-md overflow-hidden" style={{ boxShadow: '0 1px 4px rgba(0,0,0,0.3)' }}>
+        <button className="w-8 h-8 flex items-center justify-center text-slate-600 hover:bg-gray-50 transition-colors">
+          <svg width="14" height="14" viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11" stroke="currentColor" strokeWidth="1.5"/><line x1="1" y1="6" x2="11" y2="6" stroke="currentColor" strokeWidth="1.5"/></svg>
+        </button>
+        <div className="h-px bg-gray-200 mx-1"></div>
+        <button className="w-8 h-8 flex items-center justify-center text-slate-600 hover:bg-gray-50 transition-colors">
+          <svg width="14" height="14" viewBox="0 0 12 12"><line x1="1" y1="6" x2="11" y2="6" stroke="currentColor" strokeWidth="1.5"/></svg>
+        </button>
+      </div>
+
+      {/* Compass */}
+      <div className="absolute right-3 bottom-12 z-[500]">
+        <div className="w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center" style={{ boxShadow: '0 1px 4px rgba(0,0,0,0.3)' }}>
+          <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="6" stroke="#dadce0" strokeWidth="1"/>
+            <path d="M7 2 L8.2 6H5.8L7 2Z" fill="#EA4335"/>
+            <path d="M7 12 L5.8 8H8.2L7 12Z" fill="#4285F4" opacity="0.4"/>
+          </svg>
         </div>
       </div>
+
+      {/* Bottom strip with route summary */}
+      <div className="absolute bottom-0 left-0 right-0 z-[500] bg-white border-t border-gray-100 flex items-center px-4 py-2 space-x-2" style={{ minHeight: 36 }}>
+        <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ background: '#34A853' }}></div>
+        <span className="text-[11px] font-semibold text-slate-700 flex-shrink-0">{points[0]?.label}</span>
+        <div className="flex-1 h-px" style={{ background: 'repeating-linear-gradient(to right, #4285F4 0, #4285F4 4px, transparent 4px, transparent 8px)' }}></div>
+        <span className="text-[10px] text-slate-400 flex-shrink-0">{points.length} etapes</span>
+        <div className="flex-1 h-px" style={{ background: 'repeating-linear-gradient(to right, #4285F4 0, #4285F4 4px, transparent 4px, transparent 8px)' }}></div>
+        <span className="text-[11px] font-semibold text-slate-700 flex-shrink-0">{points[points.length - 1]?.label}</span>
+        <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ background: '#EA4335' }}></div>
+      </div>
+
+      {/* Attribution */}
+      <div className="absolute bottom-10 left-3 z-[500]">
+        <span className="text-[8px] text-slate-400 bg-white/80 px-1 rounded">&copy; CartoDB &middot; OpenStreetMap</span>
+      </div>
+
       <style>{`
-        .detail-map-tooltip {
+        .gmaps-detail-tip, .gmaps-detail-tip .leaflet-tooltip {
           background: white !important;
           border: none !important;
-          border-radius: 8px !important;
-          box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1) !important;
-          padding: 0 !important;
+          border-radius: 4px !important;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.25) !important;
+          padding: 5px 10px !important;
+          color: #1a1a1a !important;
+          font-family: 'Inter', sans-serif !important;
+          font-size: 12px !important;
+          font-weight: 600 !important;
+          pointer-events: none !important;
+          white-space: nowrap !important;
         }
-        .marker-active .marker-dot {
-          background: #db8b21 !important;
-          transform: scale(2);
-          transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-          box-shadow: 0 0 0 10px rgba(219, 139, 33, 0.2);
+        .gmaps-detail-tip:before { display: none !important; }
+        .gmaps-detail-tip-sm, .gmaps-detail-tip-sm .leaflet-tooltip {
+          background: white !important;
+          border: none !important;
+          border-radius: 3px !important;
+          box-shadow: 0 1px 4px rgba(0,0,0,0.2) !important;
+          padding: 4px 8px !important;
+          color: #333 !important;
+          font-family: 'Inter', sans-serif !important;
+          font-size: 11px !important;
+          font-weight: 500 !important;
         }
+        .gmaps-detail-tip-sm:before { display: none !important; }
       `}</style>
     </div>
   );
