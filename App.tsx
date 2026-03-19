@@ -106,7 +106,7 @@ const App: React.FC = () => {
         )}
       </main>
 
-      <Footer />
+      <Footer onFilterSelect={handleFilterSelect} />
 
       {/* Persistent Mobile CTA */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-lg border-t border-slate-200 z-40">
