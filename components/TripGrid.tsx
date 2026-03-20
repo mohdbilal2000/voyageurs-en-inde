@@ -284,7 +284,7 @@ const TripGrid: React.FC<TripGridProps> = ({ trips, onTripSelect, externalFilter
                 alt={trip.title}
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = `https://placehold.co/800x1200/db8b21/ffffff?text=${trip.title.replace(/ /g, '+')}`;
+                  (e.target as HTMLImageElement).src = `https://placehold.co/800x1200/0055A4/ffffff?text=${trip.title.replace(/ /g, '+')}`;
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -301,7 +301,7 @@ const TripGrid: React.FC<TripGridProps> = ({ trips, onTripSelect, externalFilter
             <div className="absolute inset-0 z-20 flex flex-col justify-end p-8 pointer-events-none">
               <div className={`transition-all duration-500 ${hoveredTripId === trip.id ? 'translate-y-[-10px] opacity-0' : 'translate-y-0 opacity-100'}`}>
                 <div className="flex items-center space-x-3 mb-3">
-                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-saffron">{trip.duration}</span>
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-fr-red">{trip.duration}</span>
                   <div className="w-1 h-1 bg-white/40 rounded-full"></div>
                   <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/70">{trip.region}</span>
                 </div>

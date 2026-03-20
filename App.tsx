@@ -54,7 +54,7 @@ const App: React.FC = () => {
   const closeQuoteForm = () => setIsQuoteFormOpen(false);
 
   return (
-    <div className="min-h-screen bg-[#fdfbf7] text-slate-900 flex flex-col">
+    <div className="min-h-screen bg-[#f8f9fc] text-slate-900 flex flex-col">
       <Header 
         onNavigateHome={handleNavigateHome} 
         onRequestQuote={openQuoteForm}
@@ -112,7 +112,7 @@ const App: React.FC = () => {
       <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-lg border-t border-slate-200 z-40">
         <button 
           onClick={openQuoteForm}
-          className="w-full bg-saffron text-white py-4 px-6 rounded-full font-black uppercase tracking-[0.2em] shadow-xl active:scale-95 transition-transform"
+          className="w-full bg-fr-red text-white py-4 px-6 rounded-full font-black uppercase tracking-[0.2em] shadow-xl active:scale-95 transition-transform"
         >
           DEMANDER UN DEVIS
         </button>

@@ -29,7 +29,7 @@ const RegionalSection: React.FC<RegionalSectionProps> = ({ onRegionSelect }) => 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
               <div className="absolute bottom-8 left-8 text-white">
-                <p className="text-[9px] font-bold tracking-[0.3em] uppercase mb-2 text-saffron">Destinations</p>
+                <p className="text-[9px] font-bold tracking-[0.3em] uppercase mb-2 text-fr-red">Destinations</p>
                 <h3 className="text-3xl font-serif">{region.name}</h3>
               </div>
             </div>

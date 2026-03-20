@@ -243,7 +243,7 @@ const TripDetail: React.FC<TripDetailProps> = ({ trip, onRequestQuote }) => {
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl text-white">
               <div className="flex items-center space-x-3 mb-6">
-                <span className="bg-saffron text-white text-[10px] font-black uppercase tracking-[0.3em] px-4 py-2 rounded-full shadow-2xl">L'Évasion Absolue</span>
+                <span className="bg-fr-red text-white text-[10px] font-black uppercase tracking-[0.3em] px-4 py-2 rounded-full shadow-2xl">L'Évasion Absolue</span>
                 <p className="uppercase text-xs tracking-[0.3em] font-bold opacity-80">{trip.region} • {trip.duration}</p>
               </div>
               <h1 className="text-6xl md:text-8xl font-serif mb-10 leading-[1.1]">{trip.title}</h1>
@@ -254,7 +254,7 @@ const TripDetail: React.FC<TripDetailProps> = ({ trip, onRequestQuote }) => {
                  </div>
                  <button 
                   onClick={onRequestQuote}
-                  className="bg-white text-slate-900 px-12 py-5 rounded-full font-black uppercase tracking-[0.2em] hover:bg-saffron hover:text-white transition-all shadow-2xl text-[11px] transform hover:-translate-y-1"
+                  className="bg-white text-slate-900 px-12 py-5 rounded-full font-black uppercase tracking-[0.2em] hover:bg-fr-red hover:text-white transition-all shadow-2xl text-[11px] transform hover:-translate-y-1"
                  >
                    DÉBUTER LA CONCEPTION
                  </button>
@@ -270,6 +270,7 @@ const TripDetail: React.FC<TripDetailProps> = ({ trip, onRequestQuote }) => {
           <div className="lg:col-span-7">
             <div className="mb-20">
               <span className="text-saffron text-xs font-black uppercase tracking-[0.4em] mb-6 block">Le Programme</span>
+
               <h2 className="text-4xl md:text-5xl font-serif mb-8 italic">Votre Route Exclusive</h2>
               <p className="text-lg text-slate-500 leading-relaxed font-light mb-12">
                 Chaque étape de ce voyage a été pensée pour équilibrer confort absolu et découvertes spontanées. Cet itinéraire n'est qu'une esquisse que nous adapterons à vos envies les plus secrètes.
@@ -284,7 +285,7 @@ const TripDetail: React.FC<TripDetailProps> = ({ trip, onRequestQuote }) => {
                        className={`w-full flex items-center justify-between p-8 text-left transition-colors ${activeDay === day.day ? 'bg-slate-900 text-white' : ''}`}
                     >
                        <div className="flex items-center space-x-8">
-                          <div className={`w-12 h-12 rounded-full flex items-center justify-center font-serif italic text-xl border transition-all ${activeDay === day.day ? 'bg-saffron border-transparent text-white' : 'bg-white border-slate-200 text-slate-300'}`}>
+                          <div className={`w-12 h-12 rounded-full flex items-center justify-center font-serif italic text-xl border transition-all ${activeDay === day.day ? 'bg-fr-red border-transparent text-white' : 'bg-white border-slate-200 text-slate-300'}`}>
                             {day.day}
                           </div>
                           <div>
@@ -324,7 +325,7 @@ const TripDetail: React.FC<TripDetailProps> = ({ trip, onRequestQuote }) => {
             <div className="grid grid-cols-2 gap-6">
                {trip.highlights.map((h, i) => (
                  <div key={i} className="flex items-start space-x-4 p-6 border border-slate-100 rounded-2xl bg-white shadow-sm">
-                   <span className="text-saffron font-bold">✦</span>
+                   <span className="text-saffron font-bold">&#9670;</span>
                    <span className="text-sm font-medium text-slate-700">{h}</span>
                  </div>
                ))}
@@ -356,7 +357,7 @@ const TripDetail: React.FC<TripDetailProps> = ({ trip, onRequestQuote }) => {
 
                   <button 
                     onClick={onRequestQuote}
-                    className="w-full bg-saffron text-white py-5 rounded-full font-black uppercase tracking-widest hover:bg-white hover:text-slate-900 transition-all text-[10px] shadow-xl"
+                    className="w-full bg-fr-red text-white py-5 rounded-full font-black uppercase tracking-widest hover:bg-white hover:text-slate-900 transition-all text-[10px] shadow-xl"
                   >
                     RECEVOIR MA PROPOSITION
                   </button>
@@ -369,12 +370,12 @@ const TripDetail: React.FC<TripDetailProps> = ({ trip, onRequestQuote }) => {
       {/* Social Proof Integration */}
       <section className="bg-slate-50 py-32 border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <span className="text-saffron text-xs font-black uppercase tracking-[0.5em] mb-6 block">L'Exigence Voyageurs</span>
+          <span className="text-fr-red text-xs font-black uppercase tracking-[0.5em] mb-6 block">L'Exigence Voyageurs</span>
           <h2 className="text-4xl md:text-5xl font-serif mb-10 italic">Prêt à vivre cette expérience ?</h2>
           <p className="text-slate-500 mb-12 text-lg font-light leading-relaxed">Chaque voyage est une pièce unique. Confiez-nous vos rêves, nous en ferons votre réalité.</p>
           <button 
             onClick={onRequestQuote}
-            className="px-12 py-6 bg-slate-900 text-white rounded-full font-black uppercase tracking-[0.2em] hover:bg-saffron transition-all shadow-2xl transform active:scale-95"
+            className="px-12 py-6 bg-slate-900 text-white rounded-full font-black uppercase tracking-[0.2em] hover:bg-fr-red transition-all shadow-2xl transform active:scale-95"
           >
             COMMENCER MON PROJET
           </button>

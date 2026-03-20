@@ -3,7 +3,7 @@ import React from 'react';
 
 const AboutPage: React.FC = () => {
   return (
-    <div className="bg-[#fdfbf7]">
+    <div className="bg-[#f8f9fc]">
       {/* Brand Hero */}
       <section className="relative py-32 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -61,10 +61,10 @@ const AboutPage: React.FC = () => {
               <div key={i} className="group text-center">
                 <div className="aspect-[3/4] overflow-hidden rounded-[2.5rem] mb-8 shadow-2xl relative">
                   <img src={member.img} alt={member.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-saffron/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-saffron/10 opacity-0 group-hover:opacity-100 transition-opacity" style={{backgroundColor: 'rgba(0,85,164,0.1)'}}></div>
                 </div>
                 <h4 className="text-2xl font-serif mb-1">{member.name}</h4>
-                <p className="text-saffron uppercase text-[10px] font-black tracking-widest">{member.role}</p>
+                <p className="text-fr-red uppercase text-[10px] font-black tracking-widest">{member.role}</p>
               </div>
             ))}
           </div>

@@ -42,7 +42,7 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onClose }) => {
            <p className="text-slate-500 mb-8 leading-relaxed">Notre architecte de voyage va examiner vos détails et vous contactera sous 24 heures pour commencer à concevoir votre itinéraire.</p>
            <button 
              onClick={onClose}
-             className="w-full bg-saffron text-white py-4 rounded-full font-bold uppercase tracking-widest hover:bg-slate-900 transition-all text-xs"
+             className="w-full bg-fr-red text-white py-4 rounded-full font-bold uppercase tracking-widest hover:bg-slate-900 transition-all text-xs"
            >
              Fermer
            </button>
@@ -85,7 +85,7 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onClose }) => {
                       required
                       type="text" 
                       placeholder="Où souhaitez-vous aller ?"
-                      className="w-full p-5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-saffron/5 outline-none transition-all placeholder-slate-300"
+                      className="w-full p-5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-blue-200 outline-none transition-all placeholder-slate-300"
                       value={formData.destination}
                       onChange={(e) => setFormData({...formData, destination: e.target.value})}
                     />
@@ -128,7 +128,7 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onClose }) => {
                         min="1000" 
                         max="15000" 
                         step="500"
-                        className="flex-grow accent-saffron h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer"
+                        className="flex-grow accent-blue-700 h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer"
                         value={formData.budget}
                         onChange={(e) => setFormData({...formData, budget: e.target.value})}
                      />
@@ -147,7 +147,7 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onClose }) => {
                       required
                       type="text" 
                       placeholder="Jean Dupont"
-                      className="w-full p-5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-saffron/5 outline-none transition-all"
+                      className="w-full p-5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-blue-200 outline-none transition-all"
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                     />
@@ -159,7 +159,7 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onClose }) => {
                         required
                         type="email" 
                         placeholder="jean@exemple.com"
-                        className="w-full p-5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-saffron/5 outline-none transition-all"
+                        className="w-full p-5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-blue-200 outline-none transition-all"
                         value={formData.email}
                         onChange={(e) => setFormData({...formData, email: e.target.value})}
                       />
@@ -169,7 +169,7 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onClose }) => {
                       <input 
                         type="tel" 
                         placeholder="+33"
-                        className="w-full p-5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-saffron/5 outline-none transition-all"
+                        className="w-full p-5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-blue-200 outline-none transition-all"
                         value={formData.phone}
                         onChange={(e) => setFormData({...formData, phone: e.target.value})}
                       />
@@ -179,7 +179,7 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onClose }) => {
                     <label className="block text-[10px] font-bold uppercase tracking-widest mb-2 text-slate-400">Vos Envies / Détails Particuliers</label>
                     <textarea 
                       placeholder="Parlez-nous de vos centres d'intérêt, d'un événement à fêter, ou de demandes spécifiques..."
-                      className="w-full p-5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-saffron/5 outline-none transition-all h-32 resize-none"
+                      className="w-full p-5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-blue-200 outline-none transition-all h-32 resize-none"
                       value={formData.notes}
                       onChange={(e) => setFormData({...formData, notes: e.target.value})}
                     ></textarea>
@@ -201,7 +201,7 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onClose }) => {
               <button 
                 type="submit"
                 disabled={isSubmitting}
-                className="flex-grow bg-slate-900 text-white py-5 rounded-full font-bold uppercase tracking-widest hover:bg-saffron transition-all shadow-xl disabled:opacity-50 text-[10px]"
+                className="flex-grow bg-slate-900 text-white py-5 rounded-full font-bold uppercase tracking-widest hover:bg-fr-red transition-all shadow-xl disabled:opacity-50 text-[10px]"
               >
                 {isSubmitting ? 'Envoi en cours...' : (step === 1 ? 'Étape Suivante' : 'Envoyer ma Demande')}
               </button>

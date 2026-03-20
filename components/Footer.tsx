@@ -30,7 +30,7 @@ const Footer: React.FC<FooterProps> = ({ onFilterSelect }) => {
   };
 
   return (
-    <footer className="bg-slate-50 border-t border-slate-200 pt-24 pb-32 md:pb-12">
+    <footer className="bg-[#f0f2f8] border-t border-slate-200 pt-24 pb-32 md:pb-12">
       <div className="max-w-7xl mx-auto px-6">
         {/* Brand Reinforcement Statement */}
         <div className="mb-20 text-center max-w-3xl mx-auto">
@@ -41,7 +41,7 @@ const Footer: React.FC<FooterProps> = ({ onFilterSelect }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           {/* Brand & Newsletter */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl font-serif font-black mb-6 tracking-tighter">VOYAGEURS<br/><span className="text-saffron text-sm tracking-[0.4em]">EN INDE</span></h3>
+            <h3 className="text-2xl font-serif font-black mb-6 tracking-tighter">VOYAGEURS<br/><span className="text-fr-red text-sm tracking-[0.4em]">EN INDE</span></h3>
             <p className="text-slate-500 text-sm leading-relaxed mb-8">Architectes de voyages d'exception sur mesure depuis 2008. Une expertise francaise au service de l'Inde.</p>
             <div className="space-y-4">
                <p className="text-xs font-bold uppercase tracking-widest text-slate-900">Rejoindre le Cercle</p>

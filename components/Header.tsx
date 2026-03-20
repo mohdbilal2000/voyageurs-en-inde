@@ -57,7 +57,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigateHome, onRequestQuote, onNavig
             style={!isScrolled && !mobileOpen ? { textShadow: '0 1px 4px rgba(0,0,0,0.4)' } : undefined}
           >
             <span className="text-2xl font-serif font-black tracking-tighter leading-none">VOYAGEURS</span>
-            <span className="text-[10px] font-bold uppercase tracking-[0.4em] ml-0.5 text-saffron">EN INDE</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.4em] ml-0.5 text-fr-red">EN INDE</span>
           </button>
 
           {/* Desktop Navigation */}
@@ -135,8 +135,8 @@ const Header: React.FC<HeaderProps> = ({ onNavigateHome, onRequestQuote, onNavig
               onClick={onRequestQuote}
               className={`hidden sm:block px-7 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 transform active:scale-95 ${
                 isScrolled
-                ? 'bg-saffron text-white shadow-lg shadow-saffron/20 hover:bg-slate-900'
-                : 'bg-white text-slate-900 hover:bg-saffron hover:text-white'
+                ? 'bg-fr-red text-white shadow-lg hover:bg-slate-900'
+                : 'bg-white text-slate-900 hover:bg-fr-red hover:text-white'
               }`}
             >
               DEVIS SUR MESURE
@@ -198,7 +198,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigateHome, onRequestQuote, onNavig
           <div className="mt-auto pt-8">
             <button
               onClick={() => { onRequestQuote(); setMobileOpen(false); }}
-              className="w-full bg-saffron text-white py-4 rounded-full font-black uppercase tracking-[0.2em] text-[11px] hover:bg-slate-900 transition-colors"
+              className="w-full bg-fr-red text-white py-4 rounded-full font-black uppercase tracking-[0.2em] text-[11px] hover:bg-slate-900 transition-colors"
             >
               DEVIS SUR MESURE
             </button>

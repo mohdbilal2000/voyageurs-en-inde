@@ -28,7 +28,7 @@ const Hero: React.FC<HeroProps> = ({ onRequestQuote }) => {
       {/* Content Layer */}
       <div className="relative z-10 text-center px-6 max-w-5xl">
         <div className="mb-8 overflow-hidden">
-          <span className="inline-block text-saffron text-[11px] font-black tracking-[0.6em] uppercase animate-in slide-in-from-bottom-full duration-700">
+          <span className="inline-block text-fr-red text-[11px] font-black tracking-[0.6em] uppercase animate-in slide-in-from-bottom-full duration-700">
             L'ÉVASION SUR MESURE EN INDE
           </span>
         </div>
@@ -62,7 +62,7 @@ const Hero: React.FC<HeroProps> = ({ onRequestQuote }) => {
           </div>
           <button 
             onClick={scrollToTrips}
-            className="w-full md:w-auto px-12 py-5 bg-saffron text-white rounded-full font-black text-[11px] uppercase tracking-[0.2em] hover:bg-slate-900 transition-all shadow-xl hover:shadow-saffron/20 active:scale-95 flex items-center justify-center"
+            className="w-full md:w-auto px-12 py-5 bg-fr-red text-white rounded-full font-black text-[11px] uppercase tracking-[0.2em] hover:bg-slate-900 transition-all shadow-xl active:scale-95 flex items-center justify-center"
           >
             DÉCOUVRIR NOS ROUTES
           </button>
@@ -70,16 +70,16 @@ const Hero: React.FC<HeroProps> = ({ onRequestQuote }) => {
 
         <div className="mt-16 flex items-center justify-center space-x-12">
            <div className="text-white/60 flex flex-col items-center group cursor-pointer" onClick={onRequestQuote}>
-              <span className="text-[10px] font-bold uppercase tracking-widest mb-2 group-hover:text-saffron transition-colors">Sur Mesure</span>
-              <div className="h-px w-8 bg-saffron/40 group-hover:w-12 transition-all"></div>
+              <span className="text-[10px] font-bold uppercase tracking-widest mb-2 group-hover:text-fr-red transition-colors">Sur Mesure</span>
+              <div className="h-px w-8 bg-white/30 group-hover:w-12 transition-all"></div>
            </div>
            <div className="text-white/60 flex flex-col items-center">
               <span className="text-[10px] font-bold uppercase tracking-widest mb-2">Conciergerie 24/7</span>
-              <div className="h-px w-8 bg-saffron/40"></div>
+              <div className="h-px w-8 bg-white/30"></div>
            </div>
            <div className="text-white/60 flex flex-col items-center">
               <span className="text-[10px] font-bold uppercase tracking-widest mb-2">Local & Durable</span>
-              <div className="h-px w-8 bg-saffron/40"></div>
+              <div className="h-px w-8 bg-white/30"></div>
            </div>
         </div>
       </div>
