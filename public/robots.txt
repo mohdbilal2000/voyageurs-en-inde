@@ -1,0 +1,9 @@
+# Voyageurs en Inde - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://voyageurs-en-inde.vercel.app/sitemap.xml
+
+# Crawl-delay (be polite to bots)
+Crawl-delay: 1
