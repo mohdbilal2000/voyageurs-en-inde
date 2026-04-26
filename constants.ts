@@ -31,7 +31,7 @@ export const TRIPS: Trip[] = [
     theme: 'Nature',
     duration: '10 Jours',
     price: 1250,
-    image: 'https://images.unsplash.com/photo-1517244683847-7456b63c5969?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=2000&auto=format&fit=crop',
     description: 'De Delhi a Jaipur via le Taj Mahal et les forets de Ranthambore : l\'Inde emblematique avec safaris au tigre inclus.',
     highlights: ['Delhi', 'Taj Mahal', 'Safari Ranthambore', 'Jaipur'],
     itinerary: [
@@ -61,7 +61,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '13 Jours',
     price: 1495,
-    image: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1642528928091-eb8451e950f3?q=80&w=2000&auto=format&fit=crop',
     description: 'Du Taj Mahal aux dunes de Jaisalmer en passant par les forets de Ranthambore et les palais de Jaipur : le grand nord du Rajasthan.',
     highlights: ['Taj Mahal', 'Ranthambore', 'Jaipur', 'Jaisalmer', 'Jodhpur'],
     itinerary: [
@@ -96,7 +96,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '14 Jours',
     price: 1350,
-    image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1575135356678-a5bc4c58a2a5?q=80&w=2000&auto=format&fit=crop',
     description: 'La boucle classique du Rajasthan : du Taj Mahal aux forteresses mogholesde Jodhpur et aux lacs romantiques d\'Udaipur.',
     highlights: ['Taj Mahal', 'Ranthambore', 'Jaipur', 'Jaisalmer', 'Udaipur'],
     itinerary: [
@@ -132,7 +132,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '14 Jours',
     price: 1450,
-    image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1672096098880-d558f29ee549?q=80&w=2000&auto=format&fit=crop',
     description: 'D\'Agra aux dunes de Jaisalmer : la route des palais, des havelis et du desert immense du Thar.',
     highlights: ['Agra', 'Jaipur', 'Nagaur', 'Jaisalmer', 'Jodhpur', 'Udaipur'],
     itinerary: [
@@ -168,7 +168,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '14 Jours',
     price: 1550,
-    image: 'https://images.unsplash.com/photo-1517244683847-7456b63c5969?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1605425368891-5533a8ede6c2?q=80&w=2000&auto=format&fit=crop',
     description: 'La route des havelis et des forts du Rajasthan : de la ville rose au desert d\'or en passant par la cite bleue de Jodhpur.',
     highlights: ['Jaipur', 'Nagaur', 'Jaisalmer', 'Jodhpur'],
     itinerary: [
@@ -203,7 +203,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '14 Jours',
     price: 1550,
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1706961121783-4ae6c933983a?q=80&w=2000&auto=format&fit=crop',
     description: 'Les plus beaux palais et lacs du Rajasthan : safari a Ranthambore, forts de Jaipur et lac romantique d\'Udaipur.',
     highlights: ['Ranthambore', 'Jaipur', 'Jodhpur', 'Udaipur'],
     itinerary: [
@@ -238,7 +238,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '15 Jours',
     price: 2100,
-    image: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1545321945-7edd9bf1331a?q=80&w=2000&auto=format&fit=crop',
     description: 'Le Rajasthan en entier : de Delhi au Taj Mahal, puis Ranthambore, Jaipur, Jaisalmer, Jodhpur et le lac d\'Udaipur.',
     highlights: ['Delhi', 'Taj Mahal', 'Jaisalmer', 'Jodhpur', 'Udaipur'],
     itinerary: [
@@ -276,7 +276,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '16 Jours',
     price: 2050,
-    image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1609255504745-ec7961f5633e?q=80&w=2000&auto=format&fit=crop',
     description: 'Le grand tour integrale du Rajasthan : palais forts deserts lacs et jungles dans un seul voyage d\'exception.',
     highlights: ['Delhi', 'Taj Mahal', 'Jaisalmer', 'Jodhpur', 'Udaipur'],
     itinerary: [
@@ -354,7 +354,7 @@ export const TRIPS: Trip[] = [
     theme: 'Nature',
     duration: '16 Jours',
     price: 2300,
-    image: 'https://images.unsplash.com/photo-1561361058-c24cecae35ca?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1588014307509-1ef94e20955f?q=80&w=2000&auto=format&fit=crop',
     description: 'Les grands palais du Rajasthan puis plongee dans la jungle du Karnataka : leopards et elephants a Kabini.',
     highlights: ['Jaipur', 'Jaisalmer', 'Jodhpur', 'Udaipur', 'Kabini'],
     itinerary: [
@@ -393,7 +393,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '18 Jours',
     price: 1350,
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1601571666853-da1081ae1017?q=80&w=2000&auto=format&fit=crop',
     description: 'La route royale de l\'Inde du Nord jusqu\'aux palais de Mysore : forts du Rajasthan, dunes du Thar et palais illumines du Karnataka.',
     highlights: ['Delhi', 'Taj Mahal', 'Jaisalmer', 'Jodhpur', 'Udaipur', 'Mysore'],
     itinerary: [
@@ -435,7 +435,7 @@ export const TRIPS: Trip[] = [
     theme: 'Nature',
     duration: '22 Jours',
     price: 2600,
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=2000&auto=format&fit=crop',
     description: 'Le grand voyage de l\'Inde royale et sauvage : palais du Rajasthan puis immersion totale dans la jungle de Kabini et les collines du Wayanad.',
     highlights: ['Jaisalmer', 'Jodhpur', 'Udaipur', 'Kabini', 'Wayanad'],
     itinerary: [
@@ -483,7 +483,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '23 Jours',
     price: 2750,
-    image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1572146462570-2129a547e6dd?q=80&w=2000&auto=format&fit=crop',
     description: 'De Delhi aux plages tropicales de Marari Beach : le voyage complet qui traverse la diversite extraordinaire de l\'Inde.',
     highlights: ['Delhi', 'Jaisalmer', 'Udaipur', 'Kabini', 'Marari Beach'],
     itinerary: [
@@ -534,7 +534,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '31 Jours',
     price: 4800,
-    image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=2000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=2000&auto=format&fit=crop',
     description: 'Le voyage ultime : de Delhi au Kerala en 31 jours a travers palais moghols, jungles royales, deserts d\'or et backwaters tropicaux.',
     highlights: ['Delhi', 'Taj Mahal', 'Jaisalmer', 'Jodhpur', 'Udaipur', 'Kabini', 'Cochin'],
     itinerary: [
@@ -589,16 +589,16 @@ export const TRIPS: Trip[] = [
 ];
 
 export const THEMES: Theme[] = [
-  { id: 'culture', name: 'Culture & Palais', icon: '🏛️', image: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=1200&auto=format&fit=crop' },
+  { id: 'culture', name: 'Culture & Palais', icon: '🏛️', image: 'https://images.unsplash.com/photo-1592385692039-e8ff4c6b7a66?q=80&w=1200&auto=format&fit=crop' },
   { id: 'nature', name: 'Nature & Zen', icon: '🌿', image: 'https://images.unsplash.com/photo-1502318217862-aa4e294ba657?q=80&w=1200&auto=format&fit=crop' },
   { id: 'aventure', name: 'Aventure & Trek', icon: '🏔️', image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop' },
-  { id: 'spiritualite', name: 'Spiritualite', icon: '🕉️', image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=1200&auto=format&fit=crop' }
+  { id: 'spiritualite', name: 'Spiritualite', icon: '🕉️', image: 'https://images.unsplash.com/photo-1701619879211-e03adf1993a4?q=80&w=1200&auto=format&fit=crop' }
 ];
 
 export const REGIONS: Region[] = [
   { id: 'rajasthan', name: 'Rajasthan', image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1200&auto=format&fit=crop' },
-  { id: 'sud', name: 'Inde du Sud', image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1200&auto=format&fit=crop' },
-  { id: 'himalaya', name: 'Himalaya', image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop' },
+  { id: 'sud', name: 'Inde du Sud', image: 'https://images.unsplash.com/photo-1597678142569-5eaad50ceed1?q=80&w=1200&auto=format&fit=crop' },
+  { id: 'himalaya', name: 'Himalaya', image: 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?q=80&w=1200&auto=format&fit=crop' },
   { id: 'nord', name: 'Inde du Nord', image: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop' }
 ];
 
@@ -608,7 +608,7 @@ export const GUIDES: Guide[] = [
     category: 'Conseils',
     title: 'Preparer son premier voyage en Inde',
     excerpt: 'Visas, vaccins et conseils de valise : tout ce qu\'il faut savoir avant le depart.',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1639575668833-563e2b735e77?q=80&w=1200&auto=format&fit=crop',
     readTime: '8 min de lecture'
   },
   {
@@ -616,7 +616,7 @@ export const GUIDES: Guide[] = [
     category: 'Culture',
     title: 'La cuisine indienne : un festival de saveurs',
     excerpt: 'Du thali du sud aux epices du Rajasthan, guide gastronomique pour gourmets.',
-    image: 'https://images.unsplash.com/photo-1517244683847-7456b63c5969?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1663325265966-0d17de3e85c5?q=80&w=1200&auto=format&fit=crop',
     readTime: '6 min de lecture'
   }
 ];

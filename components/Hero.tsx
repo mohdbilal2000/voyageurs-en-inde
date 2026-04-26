@@ -14,27 +14,27 @@ const Hero: React.FC<HeroProps> = ({ onRequestQuote }) => {
   };
 
   return (
-    <div className="relative h-screen min-h-[750px] flex items-center justify-center overflow-hidden">
+    <div className="relative h-screen min-h-[750px] flex items-end justify-center overflow-hidden">
       {/* Background with subtle Zoom Effect */}
       <div className="absolute inset-0">
-        <img 
+        <img
           src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2500&auto=format&fit=crop"
           alt="Taj Mahal Sunrise"
-          className="w-full h-full object-cover animate-in fade-in duration-1000 zoom-in-105"
+          className="w-full h-full object-cover object-top animate-in fade-in duration-1000 zoom-in-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/70 backdrop-blur-[0.5px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/80"></div>
       </div>
 
       {/* Content Layer */}
-      <div className="relative z-10 text-center px-6 max-w-5xl">
-        <div className="mb-8 overflow-hidden">
-          <span className="inline-block text-fr-red text-[11px] font-black tracking-[0.6em] uppercase animate-in slide-in-from-bottom-full duration-700">
+      <div className="relative z-10 text-center px-6 max-w-5xl mb-24">
+        <div className="mb-6 overflow-hidden">
+          <span className="inline-block text-fr-red text-[11px] font-black tracking-[0.6em] uppercase animate-in slide-in-from-bottom-full duration-700 drop-shadow-lg">
             L'ÉVASION SUR MESURE EN INDE
           </span>
         </div>
-        
-        <h1 className="text-6xl md:text-9xl text-white font-serif leading-[1] mb-12 animate-in fade-in duration-1000 delay-300">
-          La Vie Sauvage <br /> 
+
+        <h1 className="text-5xl md:text-7xl lg:text-8xl text-white font-serif leading-[1.05] mb-8 animate-in fade-in duration-1000 delay-300 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+          La Vie Sauvage <br />
           <span className="italic font-normal">Avec Voyageurs en Inde</span>
         </h1>
         
@@ -68,7 +68,7 @@ const Hero: React.FC<HeroProps> = ({ onRequestQuote }) => {
           </button>
         </div>
 
-        <div className="mt-16 flex items-center justify-center space-x-12">
+        <div className="mt-10 flex items-center justify-center space-x-12">
            <div className="text-white/60 flex flex-col items-center group cursor-pointer" onClick={onRequestQuote}>
               <span className="text-[10px] font-bold uppercase tracking-widest mb-2 group-hover:text-fr-red transition-colors">Sur Mesure</span>
               <div className="h-px w-8 bg-white/30 group-hover:w-12 transition-all"></div>
@@ -84,7 +84,7 @@ const Hero: React.FC<HeroProps> = ({ onRequestQuote }) => {
         </div>
       </div>
 
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 opacity-50 animate-bounce cursor-pointer" onClick={scrollToTrips}>
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 opacity-50 animate-bounce cursor-pointer" onClick={scrollToTrips}>
         <span className="text-[8px] text-white font-bold uppercase tracking-[0.3em]">Défiler</span>
         <div className="w-0.5 h-8 bg-gradient-to-b from-white to-transparent"></div>
       </div>
