@@ -9,7 +9,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '5 Jours',
     price: 990,
-    image: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/agra-8.avif',
     description: 'Le coeur de l\'Inde moghole en cinq jours : les ruelles de Delhi, le cycle-rickshaw en Old Delhi et le lever de soleil sur le Taj Mahal.',
     highlights: ['Old Delhi', 'Jama Masjid', 'Taj Mahal', 'Fort d\'Agra'],
     itinerary: [
@@ -31,7 +31,7 @@ export const TRIPS: Trip[] = [
     theme: 'Nature',
     duration: '10 Jours',
     price: 1250,
-    image: 'https://images.unsplash.com/photo-1517244683847-7456b63c5969?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/golden-triangle-1.avif',
     description: 'De Delhi a Jaipur via le Taj Mahal et les forets de Ranthambore : l\'Inde emblematique avec safaris au tigre inclus.',
     highlights: ['Delhi', 'Taj Mahal', 'Safari Ranthambore', 'Jaipur'],
     itinerary: [
@@ -61,7 +61,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '13 Jours',
     price: 1495,
-    image: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/rajasthan-3.avif',
     description: 'Du Taj Mahal aux dunes de Jaisalmer en passant par les forets de Ranthambore et les palais de Jaipur : le grand nord du Rajasthan.',
     highlights: ['Taj Mahal', 'Ranthambore', 'Jaipur', 'Jaisalmer', 'Jodhpur'],
     itinerary: [
@@ -96,7 +96,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '14 Jours',
     price: 1350,
-    image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/rajasthan-5.avif',
     description: 'La boucle classique du Rajasthan : du Taj Mahal aux forteresses mogholesde Jodhpur et aux lacs romantiques d\'Udaipur.',
     highlights: ['Taj Mahal', 'Ranthambore', 'Jaipur', 'Jaisalmer', 'Udaipur'],
     itinerary: [
@@ -132,7 +132,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '14 Jours',
     price: 1450,
-    image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/rajasthan-6.avif',
     description: 'D\'Agra aux dunes de Jaisalmer : la route des palais, des havelis et du desert immense du Thar.',
     highlights: ['Agra', 'Jaipur', 'Nagaur', 'Jaisalmer', 'Jodhpur', 'Udaipur'],
     itinerary: [
@@ -168,7 +168,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '14 Jours',
     price: 1550,
-    image: 'https://images.unsplash.com/photo-1517244683847-7456b63c5969?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/rajasthan-7.avif',
     description: 'La route des havelis et des forts du Rajasthan : de la ville rose au desert d\'or en passant par la cite bleue de Jodhpur.',
     highlights: ['Jaipur', 'Nagaur', 'Jaisalmer', 'Jodhpur'],
     itinerary: [
@@ -203,7 +203,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '14 Jours',
     price: 1550,
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/rajasthan-3.avif',
     description: 'Les plus beaux palais et lacs du Rajasthan : safari a Ranthambore, forts de Jaipur et lac romantique d\'Udaipur.',
     highlights: ['Ranthambore', 'Jaipur', 'Jodhpur', 'Udaipur'],
     itinerary: [
@@ -238,7 +238,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '15 Jours',
     price: 2100,
-    image: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/rajasthan-5.avif',
     description: 'Le Rajasthan en entier : de Delhi au Taj Mahal, puis Ranthambore, Jaipur, Jaisalmer, Jodhpur et le lac d\'Udaipur.',
     highlights: ['Delhi', 'Taj Mahal', 'Jaisalmer', 'Jodhpur', 'Udaipur'],
     itinerary: [
@@ -276,7 +276,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '16 Jours',
     price: 2050,
-    image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/rajasthan-6.avif',
     description: 'Le grand tour integrale du Rajasthan : palais forts deserts lacs et jungles dans un seul voyage d\'exception.',
     highlights: ['Delhi', 'Taj Mahal', 'Jaisalmer', 'Jodhpur', 'Udaipur'],
     itinerary: [
@@ -315,7 +315,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '16 Jours',
     price: 2250,
-    image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/south-9.avif',
     description: 'Deux visages de l\'Inde en un voyage : la splendeur royale du Rajasthan et la douceur tropicale des backwaters du Kerala.',
     highlights: ['Jaipur', 'Jodhpur', 'Udaipur', 'Mysore', 'Cochin'],
     itinerary: [
@@ -354,7 +354,7 @@ export const TRIPS: Trip[] = [
     theme: 'Nature',
     duration: '16 Jours',
     price: 2300,
-    image: 'https://images.unsplash.com/photo-1561361058-c24cecae35ca?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/golden-triangle-2.avif',
     description: 'Les grands palais du Rajasthan puis plongee dans la jungle du Karnataka : leopards et elephants a Kabini.',
     highlights: ['Jaipur', 'Jaisalmer', 'Jodhpur', 'Udaipur', 'Kabini'],
     itinerary: [
@@ -393,7 +393,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '18 Jours',
     price: 1350,
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/rajasthan-7.avif',
     description: 'La route royale de l\'Inde du Nord jusqu\'aux palais de Mysore : forts du Rajasthan, dunes du Thar et palais illumines du Karnataka.',
     highlights: ['Delhi', 'Taj Mahal', 'Jaisalmer', 'Jodhpur', 'Udaipur', 'Mysore'],
     itinerary: [
@@ -435,7 +435,7 @@ export const TRIPS: Trip[] = [
     theme: 'Nature',
     duration: '22 Jours',
     price: 2600,
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/golden-triangle-3.avif',
     description: 'Le grand voyage de l\'Inde royale et sauvage : palais du Rajasthan puis immersion totale dans la jungle de Kabini et les collines du Wayanad.',
     highlights: ['Jaisalmer', 'Jodhpur', 'Udaipur', 'Kabini', 'Wayanad'],
     itinerary: [
@@ -483,7 +483,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '23 Jours',
     price: 2750,
-    image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/south-10.avif',
     description: 'De Delhi aux plages tropicales de Marari Beach : le voyage complet qui traverse la diversite extraordinaire de l\'Inde.',
     highlights: ['Delhi', 'Jaisalmer', 'Udaipur', 'Kabini', 'Marari Beach'],
     itinerary: [
@@ -534,7 +534,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '31 Jours',
     price: 4800,
-    image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=2000&auto=format&fit=crop',
+    image: '/images/golden-triangle-4.avif',
     description: 'Le voyage ultime : de Delhi au Kerala en 31 jours a travers palais moghols, jungles royales, deserts d\'or et backwaters tropicaux.',
     highlights: ['Delhi', 'Taj Mahal', 'Jaisalmer', 'Jodhpur', 'Udaipur', 'Kabini', 'Cochin'],
     itinerary: [
