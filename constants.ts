@@ -168,7 +168,7 @@ export const TRIPS: Trip[] = [
     theme: 'Culture',
     duration: '14 Jours',
     price: 1550,
-    image: 'https://images.unsplash.com/photo-1517244683847-7456b63c5969?q=80&w=2000&auto=format&fit=crop',
+    image: '/rajasthan-dunes.avif',
     description: 'La route des havelis et des forts du Rajasthan : de la ville rose au desert d\'or en passant par la cite bleue de Jodhpur.',
     highlights: ['Jaipur', 'Nagaur', 'Jaisalmer', 'Jodhpur'],
     itinerary: [
