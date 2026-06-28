@@ -12,13 +12,14 @@ import QuoteForm from './components/QuoteForm';
 import AboutPage from './components/AboutPage';
 import GuideSection from './components/GuideSection';
 import { Page, Trip } from './types';
-import { TRIPS } from './constants';
+import { useSiteData } from './store/siteStore';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>(Page.Home);
   const [selectedTrip, setSelectedTrip] = useState<Trip | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [isQuoteFormOpen, setIsQuoteFormOpen] = useState(false);
+  const { trips: TRIPS } = useSiteData();
 
   // Scroll to top on page change
   useEffect(() => {

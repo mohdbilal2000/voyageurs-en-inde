@@ -55,3 +55,11 @@ export interface Guide {
   image: string;
   readTime: string;
 }
+
+export interface SiteData {
+  version: number;
+  trips: Trip[];
+  themes: Theme[];
+  regions: Region[];
+  guides: Guide[];
+}

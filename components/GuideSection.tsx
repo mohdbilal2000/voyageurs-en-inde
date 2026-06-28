@@ -1,12 +1,13 @@
 
 import React from 'react';
-import { GUIDES } from '../constants';
+import { useSiteData } from '../store/siteStore';
 
 interface GuideSectionProps {
   fullPage?: boolean;
 }
 
 const GuideSection: React.FC<GuideSectionProps> = ({ fullPage = false }) => {
+  const { guides: GUIDES } = useSiteData();
   return (
     <section className={`py-24 ${fullPage ? 'bg-white pt-32' : 'bg-slate-50'}`}>
       <div className="max-w-7xl mx-auto px-6">

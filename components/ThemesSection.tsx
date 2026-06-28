@@ -1,12 +1,13 @@
 
 import React from 'react';
-import { THEMES } from '../constants';
+import { useSiteData } from '../store/siteStore';
 
 interface ThemesSectionProps {
   onThemeSelect: (theme: string) => void;
 }
 
 const ThemesSection: React.FC<ThemesSectionProps> = ({ onThemeSelect }) => {
+  const { themes: THEMES } = useSiteData();
   return (
     <section className="py-24 bg-[#f8f9fc]">
       <div className="max-w-7xl mx-auto px-6">
