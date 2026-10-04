@@ -22,6 +22,7 @@ export interface ItineraryItem {
 
 export interface Trip {
   id: string;
+  slug: string;
   title: string;
   region: string;
   theme: string;

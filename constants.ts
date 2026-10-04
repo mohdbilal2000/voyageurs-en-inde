@@ -1,7 +1,8 @@
 
 import { Trip, Theme, Region, Guide } from './types';
+import { slugify } from './utils/slugify';
 
-export const TRIPS: Trip[] = [
+const RAW_TRIPS: Omit<Trip, 'slug'>[] = [
   {
     id: 'it-1',
     title: 'L\'Essentiel : Delhi & le Taj Mahal',
@@ -587,6 +588,14 @@ export const TRIPS: Trip[] = [
     ]
   }
 ];
+
+const seenSlugs = new Set<string>();
+export const TRIPS: Trip[] = RAW_TRIPS.map((t) => {
+  let slug = slugify(t.title);
+  if (seenSlugs.has(slug)) slug = `${slug}-${t.id}`;
+  seenSlugs.add(slug);
+  return { ...t, slug };
+});
 
 export const THEMES: Theme[] = [
   { id: 'culture', name: 'Culture & Palais', icon: '🏛️', image: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=1200&auto=format&fit=crop' },

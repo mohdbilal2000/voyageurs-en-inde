@@ -1,53 +1,71 @@
 
 import React, { useState, useEffect } from 'react';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Hero from './components/Hero';
-import TripGrid from './components/TripGrid';
-import RegionalSection from './components/RegionalSection';
-import ThemesSection from './components/ThemesSection';
-import SocialProof from './components/SocialProof';
-import TripDetail from './components/TripDetail';
-import QuoteForm from './components/QuoteForm';
+import HomePage from './components/HomePage';
+import TripDetailPage from './components/TripDetailPage';
 import AboutPage from './components/AboutPage';
 import GuideSection from './components/GuideSection';
+import QuoteForm from './components/QuoteForm';
 import { Page, Trip } from './types';
-import { TRIPS } from './constants';
+import { useSeo } from './hooks/useSeo';
+
+const GuidesPage: React.FC = () => {
+  useSeo({
+    title: 'Conseils & Guides Voyage Inde | Voyageurs en Inde',
+    description: "Nos guides pratiques pour preparer votre voyage en Inde : visa, meteo, culture et conseils d'experts francophones.",
+    path: '/conseils',
+  });
+  return (
+    <div className="animate-in fade-in duration-500 pt-20">
+      <GuideSection fullPage />
+    </div>
+  );
+};
+
+const AboutRoute: React.FC = () => {
+  useSeo({
+    title: "L'Agence | Voyageurs en Inde",
+    description: "Voyageurs en Inde, agence francophone de voyages sur mesure depuis 2008. Decouvrez notre histoire et notre expertise de l'Inde.",
+    path: '/a-propos',
+  });
+  return (
+    <div className="animate-in fade-in duration-500 pt-20">
+      <AboutPage />
+    </div>
+  );
+};
 
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<Page>(Page.Home);
-  const [selectedTrip, setSelectedTrip] = useState<Trip | null>(null);
-  const [activeFilter, setActiveFilter] = useState<string>('all');
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isQuoteFormOpen, setIsQuoteFormOpen] = useState(false);
 
-  // Scroll to top on page change
+  // Scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [currentPage, selectedTrip]);
+  }, [location.pathname]);
 
   const handleTripClick = (trip: Trip) => {
-    setSelectedTrip(trip);
-    setCurrentPage(Page.TripDetail);
+    navigate(`/circuits/${trip.slug}`);
   };
 
   const handleNavigateHome = () => {
-    setCurrentPage(Page.Home);
-    setSelectedTrip(null);
-    setActiveFilter('all');
+    navigate('/');
   };
 
   const handleFilterSelect = (filter: string) => {
-    setCurrentPage(Page.Home);
-    setSelectedTrip(null);
-    setActiveFilter(filter);
-    
-    // Smooth scroll to the trip grid
+    navigate(filter === 'all' ? '/' : `/?filter=${encodeURIComponent(filter)}`);
     setTimeout(() => {
-      const gridElement = document.getElementById('trips-grid');
-      if (gridElement) {
-        gridElement.scrollIntoView({ behavior: 'smooth' });
-      }
+      document.getElementById('trips-grid')?.scrollIntoView({ behavior: 'smooth' });
     }, 100);
+  };
+
+  const handleNavigate = (page: Page) => {
+    if (page === Page.Guides) navigate('/conseils');
+    else if (page === Page.About) navigate('/a-propos');
+    else navigate('/');
   };
 
   const openQuoteForm = () => setIsQuoteFormOpen(true);
@@ -55,62 +73,37 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#f8f9fc] text-slate-900 flex flex-col">
-      <Header 
-        onNavigateHome={handleNavigateHome} 
+      <Header
+        onNavigateHome={handleNavigateHome}
         onRequestQuote={openQuoteForm}
         onFilterSelect={handleFilterSelect}
-        onNavigate={(page) => {
-          setCurrentPage(page);
-          setSelectedTrip(null);
-        }}
+        onNavigate={handleNavigate}
       />
 
       <main className="flex-grow">
-        {currentPage === Page.Home && (
-          <div className="animate-in fade-in duration-700">
-            <Hero onRequestQuote={openQuoteForm} />
-            <div id="trips-grid" className="scroll-mt-24">
-              <TripGrid 
-                trips={TRIPS} 
-                onTripSelect={handleTripClick} 
-                externalFilter={activeFilter}
-                onFilterChange={setActiveFilter}
-              />
-            </div>
-            <RegionalSection onRegionSelect={handleFilterSelect} />
-            <ThemesSection onThemeSelect={handleFilterSelect} />
-            <SocialProof />
-            <GuideSection />
-          </div>
-        )}
-
-        {currentPage === Page.TripDetail && selectedTrip && (
-          <div className="animate-in slide-in-from-bottom-4 duration-500 pt-20">
-            <TripDetail 
-              trip={selectedTrip} 
-              onRequestQuote={openQuoteForm} 
-            />
-          </div>
-        )}
-
-        {currentPage === Page.Guides && (
-          <div className="animate-in fade-in duration-500 pt-20">
-            <GuideSection fullPage />
-          </div>
-        )}
-
-        {currentPage === Page.About && (
-          <div className="animate-in fade-in duration-500 pt-20">
-            <AboutPage />
-          </div>
-        )}
+        <Routes>
+          <Route
+            path="/"
+            element={<HomePage onRequestQuote={openQuoteForm} onTripSelect={handleTripClick} />}
+          />
+          <Route
+            path="/circuits/:slug"
+            element={
+              <div className="pt-20">
+                <TripDetailPage onRequestQuote={openQuoteForm} />
+              </div>
+            }
+          />
+          <Route path="/conseils" element={<GuidesPage />} />
+          <Route path="/a-propos" element={<AboutRoute />} />
+        </Routes>
       </main>
 
       <Footer onFilterSelect={handleFilterSelect} />
 
       {/* Persistent Mobile CTA */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-lg border-t border-slate-200 z-40">
-        <button 
+        <button
           onClick={openQuoteForm}
           className="w-full bg-fr-red text-white py-4 px-6 rounded-full font-black uppercase tracking-[0.2em] shadow-xl active:scale-95 transition-transform"
         >
