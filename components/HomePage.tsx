@@ -8,7 +8,7 @@ import ThemesSection from './ThemesSection';
 import SocialProof from './SocialProof';
 import GuideSection from './GuideSection';
 import { Trip } from '../types';
-import { TRIPS } from '../constants';
+import { useSiteData } from '../store/siteStore';
 import { useSeo } from '../hooks/useSeo';
 
 interface HomePageProps {
@@ -19,6 +19,7 @@ interface HomePageProps {
 const HomePage: React.FC<HomePageProps> = ({ onRequestQuote, onTripSelect }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeFilter = searchParams.get('filter') || 'all';
+  const { trips: TRIPS } = useSiteData();
 
   useSeo({
     title: "Voyageurs en Inde | Voyages Sur Mesure d'Exception en Inde",

@@ -1,5 +1,6 @@
 # Voyageurs en Inde - robots.txt
 User-agent: *
 Allow: /
+Disallow: /admin
 
 Sitemap: https://www.voyageurseninde.fr/sitemap.xml

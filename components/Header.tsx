@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Page } from '../types';
-import { REGIONS, THEMES } from '../constants';
+import { useSiteData } from '../store/siteStore';
 
 interface HeaderProps {
   onNavigateHome: () => void;
@@ -14,6 +14,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigateHome, onRequestQuote, onNavig
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { regions: REGIONS, themes: THEMES } = useSiteData();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);

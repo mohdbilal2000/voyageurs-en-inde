@@ -1,12 +1,13 @@
 
 import React from 'react';
-import { REGIONS } from '../constants';
+import { useSiteData } from '../store/siteStore';
 
 interface RegionalSectionProps {
   onRegionSelect: (region: string) => void;
 }
 
 const RegionalSection: React.FC<RegionalSectionProps> = ({ onRegionSelect }) => {
+  const { regions: REGIONS } = useSiteData();
   return (
     <section className="bg-white py-24">
       <div className="max-w-7xl mx-auto px-6">

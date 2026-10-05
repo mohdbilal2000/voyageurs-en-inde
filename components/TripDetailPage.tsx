@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import TripDetail from './TripDetail';
-import { TRIPS } from '../constants';
+import { useSiteData } from '../store/siteStore';
 import { useSeo } from '../hooks/useSeo';
 
 interface TripDetailPageProps {
@@ -11,6 +11,7 @@ interface TripDetailPageProps {
 
 const TripDetailPage: React.FC<TripDetailPageProps> = ({ onRequestQuote }) => {
   const { slug } = useParams<{ slug: string }>();
+  const { trips: TRIPS } = useSiteData();
   const trip = TRIPS.find((t) => t.slug === slug);
 
   useSeo({

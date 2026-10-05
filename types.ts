@@ -22,7 +22,8 @@ export interface ItineraryItem {
 
 export interface Trip {
   id: string;
-  slug: string;
+  /** URL slug; auto-derived from the title if left unset (see utils/tripSlugs). */
+  slug?: string;
   title: string;
   region: string;
   theme: string;
@@ -55,4 +56,12 @@ export interface Guide {
   excerpt: string;
   image: string;
   readTime: string;
+}
+
+export interface SiteData {
+  version: number;
+  trips: Trip[];
+  themes: Theme[];
+  regions: Region[];
+  guides: Guide[];
 }
