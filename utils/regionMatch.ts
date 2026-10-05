@@ -9,6 +9,7 @@ const REGION_ALIASES: Record<string, string[]> = {
   sud: ['inde du sud', 'sud', 'safari'],
   himalaya: ['himalaya'],
   nord: ['nord'],
+  varanasi: ['khajuraho & varanasi'],
 };
 
 export function tripsForRegion(trips: Trip[], regionId: string): Trip[] {

@@ -43,6 +43,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.voyageurseninde.fr/destinations/varanasi</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.voyageurseninde.fr/themes/culture</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -152,6 +158,18 @@
   </url>
   <url>
     <loc>https://www.voyageurseninde.fr/circuits/le-grand-tour-complet-de-l-inde</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.voyageurseninde.fr/circuits/triangle-d-or-cachemire-lacs-et-montagnes</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.voyageurseninde.fr/circuits/triangle-d-or-khajuraho-varanasi-spirituelle</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

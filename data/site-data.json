@@ -2592,6 +2592,293 @@
           "label": "Cochin"
         }
       ]
+    },
+    {
+      "id": "it-16",
+      "title": "Triangle d'Or & Cachemire : Lacs et Montagnes",
+      "region": "Himalaya",
+      "theme": "Nature",
+      "duration": "12 Jours",
+      "price": 1790,
+      "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2000&auto=format&fit=crop",
+      "description": "Du Triangle d'Or aux vallees du Cachemire : Delhi, Agra et Jaipur puis les lacs de Srinagar, Gulmarg et Pahalgam en maison flottante sur le Dal Lake.",
+      "highlights": [
+        "Taj Mahal",
+        "Fort Amber",
+        "Dal Lake en houseboat",
+        "Jardins Moghols de Srinagar",
+        "Gulmarg & Pahalgam"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrivee a Delhi",
+          "desc": "Accueil a l'aeroport. Transfert et installation a l'hotel.",
+          "lat": 28.6139,
+          "lng": 77.209
+        },
+        {
+          "day": 2,
+          "title": "Delhi Historique",
+          "desc": "Jama Masjid, Chandni Chowk en cycle-rickshaw, Red Fort, Raj Ghat, Humayun Tomb, Qutub Minar, India Gate.",
+          "lat": 28.6139,
+          "lng": 77.209
+        },
+        {
+          "day": 3,
+          "title": "Delhi vers Agra",
+          "desc": "Route vers Agra. Visite du Taj Mahal au coucher du soleil puis du Fort d Agra.",
+          "lat": 27.1767,
+          "lng": 78.0081
+        },
+        {
+          "day": 4,
+          "title": "Agra vers Jaipur",
+          "desc": "Lever de soleil optionnel sur le Taj Mahal. Route vers Jaipur via Fatehpur Sikri et le stepwell de Chand Baori.",
+          "lat": 26.9124,
+          "lng": 75.7873
+        },
+        {
+          "day": 5,
+          "title": "Jaipur : Ville Rose",
+          "desc": "Fort Amber, Jal Mahal, Hawa Mahal, City Palace, Jantar Mantar et marches locaux.",
+          "lat": 26.9124,
+          "lng": 75.7873
+        },
+        {
+          "day": 6,
+          "title": "Envol vers Srinagar",
+          "desc": "Retour a Delhi puis vol pour Srinagar. Installation sur une maison flottante traditionnelle sur le Dal Lake.",
+          "lat": 34.0837,
+          "lng": 74.7973
+        },
+        {
+          "day": 7,
+          "title": "Srinagar : Jardins & Lac",
+          "desc": "Jardins Moghols de Nishat Bagh et Shalimar Bagh. Balade en Shikara sur le Dal Lake au coucher du soleil.",
+          "lat": 34.0837,
+          "lng": 74.7973
+        },
+        {
+          "day": 8,
+          "title": "Srinagar vers Gulmarg",
+          "desc": "Route vers Gulmarg. Telecabine (gondola) jusqu a Khilanmarg pour une vue sur les sommets enneiges.",
+          "lat": 34.0484,
+          "lng": 74.3805
+        },
+        {
+          "day": 9,
+          "title": "Gulmarg vers Pahalgam",
+          "desc": "Route vers Pahalgam via les champs de safran et les ruines d'Avantipur. Decouverte de la vallee de Betaab.",
+          "lat": 34.0161,
+          "lng": 75.3189
+        },
+        {
+          "day": 10,
+          "title": "Vallee de Aru",
+          "desc": "Excursion a la vallee de Aru, balade a cheval, puis retour vers Srinagar.",
+          "lat": 34.0837,
+          "lng": 74.7973
+        },
+        {
+          "day": 11,
+          "title": "Excursion a Sonmarg",
+          "desc": "Journee a Sonmarg, la prairie d'or, porte d'entree du Ladakh. Balade a cheval vers le glacier de Thajiwas.",
+          "lat": 34.3036,
+          "lng": 75.2912
+        },
+        {
+          "day": 12,
+          "title": "Envol vers Delhi",
+          "desc": "Transfert a l'aeroport de Srinagar. Vol retour vers Delhi et correspondance internationale.",
+          "lat": 28.6139,
+          "lng": 77.209
+        }
+      ],
+      "mapPoints": [
+        {
+          "lat": 28.6139,
+          "lng": 77.209,
+          "label": "Delhi"
+        },
+        {
+          "lat": 27.1767,
+          "lng": 78.0081,
+          "label": "Agra"
+        },
+        {
+          "lat": 26.9124,
+          "lng": 75.7873,
+          "label": "Jaipur"
+        },
+        {
+          "lat": 34.0837,
+          "lng": 74.7973,
+          "label": "Srinagar"
+        },
+        {
+          "lat": 34.0484,
+          "lng": 74.3805,
+          "label": "Gulmarg"
+        },
+        {
+          "lat": 34.0161,
+          "lng": 75.3189,
+          "label": "Pahalgam"
+        },
+        {
+          "lat": 34.3036,
+          "lng": 75.2912,
+          "label": "Sonmarg"
+        }
+      ]
+    },
+    {
+      "id": "it-17",
+      "title": "Triangle d'Or, Khajuraho & Varanasi Spirituelle",
+      "region": "Khajuraho & Varanasi",
+      "theme": "Culture",
+      "duration": "13 Jours",
+      "price": 1690,
+      "image": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=2000&auto=format&fit=crop",
+      "description": "Du Triangle d'Or aux temples sacres de Khajuraho jusqu'a la ville sainte de Varanasi : une traversee entre heritage moghol, forts du Madhya Pradesh et spiritualite sur les bords du Gange.",
+      "highlights": [
+        "Taj Mahal au lever du soleil",
+        "Fort Amber",
+        "Temples de Khajuraho (UNESCO)",
+        "Ganga Aarti a Varanasi",
+        "Balade en bateau sur le Gange"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrivee a Delhi",
+          "desc": "Accueil et transfert a l'hotel. Demi-journee de decouverte de Delhi.",
+          "lat": 28.6139,
+          "lng": 77.209
+        },
+        {
+          "day": 2,
+          "title": "Delhi Historique",
+          "desc": "Raj Ghat, Red Fort, Jama Masjid, Humayun Tomb, Qutub Minar, India Gate et quartiers gouvernementaux.",
+          "lat": 28.6139,
+          "lng": 77.209
+        },
+        {
+          "day": 3,
+          "title": "Delhi vers Jaipur",
+          "desc": "Route vers Jaipur. Visite du City Palace et de l observatoire Jantar Mantar.",
+          "lat": 26.9124,
+          "lng": 75.7873
+        },
+        {
+          "day": 4,
+          "title": "Jaipur : Ville Rose",
+          "desc": "Fort Amber avec balade a dos d'elephant, Jal Mahal, Hawa Mahal et bazars locaux.",
+          "lat": 26.9124,
+          "lng": 75.7873
+        },
+        {
+          "day": 5,
+          "title": "Jaipur vers Agra",
+          "desc": "Route vers Agra via les ruines de Fatehpur Sikri.",
+          "lat": 27.1767,
+          "lng": 78.0081
+        },
+        {
+          "day": 6,
+          "title": "Agra : Taj Mahal au Lever du Soleil",
+          "desc": "Visite matinale du Taj Mahal puis du Fort d Agra.",
+          "lat": 27.1767,
+          "lng": 78.0081
+        },
+        {
+          "day": 7,
+          "title": "Agra vers Gwalior",
+          "desc": "Route vers Gwalior. Decouverte du Fort de Gwalior et de ses temples.",
+          "lat": 26.2183,
+          "lng": 78.1828
+        },
+        {
+          "day": 8,
+          "title": "Gwalior vers Orchha",
+          "desc": "Route vers Orchha. Visite du Jahangir Mahal, du Ram Mandir et des bords de la riviere Betwa.",
+          "lat": 25.3516,
+          "lng": 78.6411
+        },
+        {
+          "day": 9,
+          "title": "Orchha vers Khajuraho",
+          "desc": "Route vers Khajuraho. Decouverte des temples Jain.",
+          "lat": 24.8318,
+          "lng": 79.9199
+        },
+        {
+          "day": 10,
+          "title": "Khajuraho : Temples UNESCO",
+          "desc": "Visite du groupe de temples de Khajuraho, celebres pour leurs sculptures, classes au patrimoine mondial de l UNESCO.",
+          "lat": 24.8318,
+          "lng": 79.9199
+        },
+        {
+          "day": 11,
+          "title": "Envol vers Varanasi",
+          "desc": "Vol vers Varanasi. En soiree, ceremonie de la Ganga Aarti sur les ghats du Gange.",
+          "lat": 25.3176,
+          "lng": 82.9739
+        },
+        {
+          "day": 12,
+          "title": "Varanasi : Gange & Temples",
+          "desc": "Balade en bateau sur le Gange au lever du soleil pour decouvrir les ghats, puis visite du temple de Bharat Mata.",
+          "lat": 25.3176,
+          "lng": 82.9739
+        },
+        {
+          "day": 13,
+          "title": "Varanasi vers Delhi & Envol",
+          "desc": "Vol retour vers Delhi et correspondance pour votre vol international.",
+          "lat": 28.6139,
+          "lng": 77.209
+        }
+      ],
+      "mapPoints": [
+        {
+          "lat": 28.6139,
+          "lng": 77.209,
+          "label": "Delhi"
+        },
+        {
+          "lat": 26.9124,
+          "lng": 75.7873,
+          "label": "Jaipur"
+        },
+        {
+          "lat": 27.1767,
+          "lng": 78.0081,
+          "label": "Agra"
+        },
+        {
+          "lat": 26.2183,
+          "lng": 78.1828,
+          "label": "Gwalior"
+        },
+        {
+          "lat": 25.3516,
+          "lng": 78.6411,
+          "label": "Orchha"
+        },
+        {
+          "lat": 24.8318,
+          "lng": 79.9199,
+          "label": "Khajuraho"
+        },
+        {
+          "lat": 25.3176,
+          "lng": 82.9739,
+          "label": "Varanasi"
+        }
+      ]
     }
   ],
   "themes": [
@@ -2640,6 +2927,11 @@
       "id": "nord",
       "name": "Delhi, Agra & Taj Mahal",
       "image": "/photos/taj-mahal-sunset.jpg"
+    },
+    {
+      "id": "varanasi",
+      "name": "Khajuraho & Varanasi",
+      "image": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=1200&auto=format&fit=crop"
     }
   ],
   "guides": [
