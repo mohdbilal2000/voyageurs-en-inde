@@ -1,6 +1,10 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Trip, MapPoint, ItineraryItem } from '../types';
+import Breadcrumb from './Breadcrumb';
+import FAQSection from './FAQSection';
+import RelatedTrips from './RelatedTrips';
+import { generateTripFaq } from '../utils/tripFaq';
 
 interface DetailMapProps {
   points: MapPoint[];
@@ -215,9 +219,10 @@ const DetailMap: React.FC<DetailMapProps> = ({ points, activeLocation }) => {
 interface TripDetailProps {
   trip: Trip;
   onRequestQuote: () => void;
+  allTrips?: Trip[];
 }
 
-const TripDetail: React.FC<TripDetailProps> = ({ trip, onRequestQuote }) => {
+const TripDetail: React.FC<TripDetailProps> = ({ trip, onRequestQuote, allTrips = [] }) => {
   const [activeDay, setActiveDay] = useState<number | null>(1);
   const [activeLocation, setActiveLocation] = useState<{lat: number, lng: number} | null>(null);
 
@@ -239,6 +244,18 @@ const TripDetail: React.FC<TripDetailProps> = ({ trip, onRequestQuote }) => {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-black/30"></div>
+        <div className="absolute top-28 left-0 right-0 px-6">
+          <div className="max-w-7xl mx-auto">
+            <Breadcrumb
+              dark
+              items={[
+                { label: 'Accueil', path: '/' },
+                { label: 'Nos Circuits', path: '/?filter=all#trips-grid' },
+                { label: trip.title },
+              ]}
+            />
+          </div>
+        </div>
         <div className="absolute bottom-20 left-0 right-0 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl text-white">
@@ -366,6 +383,10 @@ const TripDetail: React.FC<TripDetailProps> = ({ trip, onRequestQuote }) => {
           </div>
         </div>
       </div>
+
+      <FAQSection items={generateTripFaq(trip)} schemaId="trip-faq-schema" />
+
+      <RelatedTrips currentTrip={trip} allTrips={allTrips} />
 
       {/* Social Proof Integration */}
       <section className="bg-slate-50 py-32 border-t border-slate-100">

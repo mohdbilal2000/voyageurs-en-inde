@@ -47,7 +47,7 @@ const TripDetailPage: React.FC<TripDetailPageProps> = ({ onRequestQuote }) => {
     return <Navigate to="/" replace />;
   }
 
-  return <TripDetail trip={trip} onRequestQuote={onRequestQuote} />;
+  return <TripDetail trip={trip} onRequestQuote={onRequestQuote} allTrips={TRIPS} />;
 };
 
 export default TripDetailPage;
