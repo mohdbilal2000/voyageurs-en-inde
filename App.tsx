@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
 import TripDetailPage from './components/TripDetailPage';
+import RegionPage from './components/RegionPage';
 import AboutPage from './components/AboutPage';
 import GuideSection from './components/GuideSection';
 import QuoteForm from './components/QuoteForm';
@@ -62,6 +63,10 @@ const App: React.FC = () => {
     }, 100);
   };
 
+  const handleRegionSelect = (regionId: string) => {
+    navigate(`/destinations/${regionId}`);
+  };
+
   const handleNavigate = (page: Page) => {
     if (page === Page.Guides) navigate('/conseils');
     else if (page === Page.About) navigate('/a-propos');
@@ -77,6 +82,7 @@ const App: React.FC = () => {
         onNavigateHome={handleNavigateHome}
         onRequestQuote={openQuoteForm}
         onFilterSelect={handleFilterSelect}
+        onRegionSelect={handleRegionSelect}
         onNavigate={handleNavigate}
       />
 
@@ -94,6 +100,7 @@ const App: React.FC = () => {
               </div>
             }
           />
+          <Route path="/destinations/:regionId" element={<RegionPage onRequestQuote={openQuoteForm} />} />
           <Route path="/conseils" element={<GuidesPage />} />
           <Route path="/a-propos" element={<AboutRoute />} />
         </Routes>

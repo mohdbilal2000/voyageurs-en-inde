@@ -17,6 +17,7 @@ interface HomePageProps {
 }
 
 const HomePage: React.FC<HomePageProps> = ({ onRequestQuote, onTripSelect }) => {
+  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const activeFilter = searchParams.get('filter') || 'all';
   const { trips: TRIPS } = useSiteData();
@@ -35,6 +36,10 @@ const HomePage: React.FC<HomePageProps> = ({ onRequestQuote, onTripSelect }) => 
     }
   };
 
+  const handleRegionSelect = (regionId: string) => {
+    navigate(`/destinations/${regionId}`);
+  };
+
   return (
     <div className="animate-in fade-in duration-700">
       <Hero onRequestQuote={onRequestQuote} />
@@ -46,7 +51,7 @@ const HomePage: React.FC<HomePageProps> = ({ onRequestQuote, onTripSelect }) => 
           onFilterChange={handleFilterChange}
         />
       </div>
-      <RegionalSection onRegionSelect={handleFilterChange} />
+      <RegionalSection onRegionSelect={handleRegionSelect} />
       <ThemesSection onThemeSelect={handleFilterChange} />
       <SocialProof />
       <GuideSection />

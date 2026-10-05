@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import LegalModal from './LegalModal';
 
 type LegalPage = 'privacy' | 'cgv' | 'mentions';
@@ -9,6 +10,7 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ onFilterSelect }) => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const [legalPage, setLegalPage] = useState<LegalPage | null>(null);
@@ -27,6 +29,11 @@ const Footer: React.FC<FooterProps> = ({ onFilterSelect }) => {
       onFilterSelect(filter);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  };
+
+  const handleFooterRegionNav = (regionId: string) => {
+    navigate(`/destinations/${regionId}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -68,19 +75,19 @@ const Footer: React.FC<FooterProps> = ({ onFilterSelect }) => {
           <div>
             <h4 className="font-bold uppercase tracking-widest text-[10px] mb-8 text-slate-400">Explorer les Regions</h4>
             <ul className="space-y-4 text-sm text-slate-500">
-              <li onClick={() => handleFooterNav('Rajasthan')} className="hover:text-saffron transition-colors cursor-pointer flex items-center group">
+              <li onClick={() => handleFooterRegionNav('rajasthan')} className="hover:text-saffron transition-colors cursor-pointer flex items-center group">
                 <span className="w-0 group-hover:w-4 transition-all overflow-hidden mr-0 group-hover:mr-2">&rarr;</span>
                 Rajasthan & Palais
               </li>
-              <li onClick={() => handleFooterNav('Inde du Sud')} className="hover:text-saffron transition-colors cursor-pointer flex items-center group">
+              <li onClick={() => handleFooterRegionNav('sud')} className="hover:text-saffron transition-colors cursor-pointer flex items-center group">
                 <span className="w-0 group-hover:w-4 transition-all overflow-hidden mr-0 group-hover:mr-2">&rarr;</span>
                 Kerala & Backwaters
               </li>
-              <li onClick={() => handleFooterNav('Himalaya')} className="hover:text-saffron transition-colors cursor-pointer flex items-center group">
+              <li onClick={() => handleFooterRegionNav('himalaya')} className="hover:text-saffron transition-colors cursor-pointer flex items-center group">
                 <span className="w-0 group-hover:w-4 transition-all overflow-hidden mr-0 group-hover:mr-2">&rarr;</span>
                 Himalaya & Ladakh
               </li>
-              <li onClick={() => handleFooterNav('Nord')} className="hover:text-saffron transition-colors cursor-pointer flex items-center group">
+              <li onClick={() => handleFooterRegionNav('nord')} className="hover:text-saffron transition-colors cursor-pointer flex items-center group">
                 <span className="w-0 group-hover:w-4 transition-all overflow-hidden mr-0 group-hover:mr-2">&rarr;</span>
                 Varanasi & Gange
               </li>

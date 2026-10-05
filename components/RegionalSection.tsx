@@ -20,7 +20,7 @@ const RegionalSection: React.FC<RegionalSectionProps> = ({ onRegionSelect }) => 
           {REGIONS.map((region) => (
             <div 
               key={region.id} 
-              onClick={() => onRegionSelect(region.name)}
+              onClick={() => onRegionSelect(region.id)}
               className="relative group overflow-hidden rounded-[2rem] aspect-[4/5] cursor-pointer shadow-lg active:scale-95 transition-transform"
             >
               <img 

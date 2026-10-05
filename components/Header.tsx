@@ -8,9 +8,10 @@ interface HeaderProps {
   onRequestQuote: () => void;
   onNavigate: (page: Page) => void;
   onFilterSelect: (filter: string) => void;
+  onRegionSelect: (regionId: string) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onNavigateHome, onRequestQuote, onNavigate, onFilterSelect }) => {
+const Header: React.FC<HeaderProps> = ({ onNavigateHome, onRequestQuote, onNavigate, onFilterSelect, onRegionSelect }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -36,6 +37,12 @@ const Header: React.FC<HeaderProps> = ({ onNavigateHome, onRequestQuote, onNavig
 
   const handleFilterClick = (filter: string) => {
     onFilterSelect(filter);
+    setActiveMenu(null);
+    setMobileOpen(false);
+  };
+
+  const handleRegionClick = (regionId: string) => {
+    onRegionSelect(regionId);
     setActiveMenu(null);
     setMobileOpen(false);
   };
@@ -82,7 +89,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigateHome, onRequestQuote, onNavig
                   {REGIONS.map(r => (
                     <button
                       key={r.id}
-                      onClick={() => handleFilterClick(r.name)}
+                      onClick={() => handleRegionClick(r.id)}
                       className="flex items-center space-x-4 p-2 hover:bg-slate-50 rounded-xl transition-all group/item"
                     >
                       <img src={r.image} className="w-16 h-12 object-cover rounded-lg shadow-sm" alt={r.name} />
@@ -167,7 +174,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigateHome, onRequestQuote, onNavig
             {REGIONS.map(r => (
               <button
                 key={r.id}
-                onClick={() => handleFilterClick(r.name)}
+                onClick={() => handleRegionClick(r.id)}
                 className="flex items-center space-x-4 py-3 px-2 hover:bg-slate-50 rounded-xl transition-all text-left"
               >
                 <img src={r.image} className="w-12 h-9 object-cover rounded-lg" alt={r.name} />
