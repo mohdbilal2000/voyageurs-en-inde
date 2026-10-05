@@ -2,7 +2,7 @@ import path from 'path';
 import { writeFileSync } from 'fs';
 import { defineConfig, loadEnv, Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
-import { TRIPS, REGIONS } from './constants';
+import { TRIPS, REGIONS, THEMES } from './constants';
 
 const SITE_URL = 'https://www.voyageurseninde.fr';
 
@@ -19,6 +19,10 @@ function llmsTxtPlugin(): Plugin {
         (r) => `- [${r.name}](${SITE_URL}/destinations/${r.id}): tous les circuits sur mesure au ${r.name}`
       ).join('\n');
 
+      const themeLines = THEMES.map(
+        (t) => `- [${t.name}](${SITE_URL}/themes/${t.id}): tous les circuits sur le thème ${t.name}`
+      ).join('\n');
+
       const content = `# Voyageurs en Inde
 
 > Agence francophone de voyages sur mesure en Inde depuis 2008. Circuits privatifs au Rajasthan, Kerala, Himalaya et dans tout le sous-continent indien, avec guides francophones et conciergerie 24/7. Basée à Agra, Inde.
@@ -32,6 +36,10 @@ function llmsTxtPlugin(): Plugin {
 ## Destinations
 
 ${regionLines}
+
+## Thématiques
+
+${themeLines}
 
 ## Circuits disponibles
 
@@ -58,7 +66,8 @@ function sitemapPlugin(): Plugin {
       const staticRoutes = ['/', '/conseils', '/a-propos'];
       const tripRoutes = TRIPS.map((t) => `/circuits/${t.slug}`);
       const regionRoutes = REGIONS.map((r) => `/destinations/${r.id}`);
-      const urls = [...staticRoutes, ...regionRoutes, ...tripRoutes];
+      const themeRoutes = THEMES.map((t) => `/themes/${t.id}`);
+      const urls = [...staticRoutes, ...regionRoutes, ...themeRoutes, ...tripRoutes];
       const today = new Date().toISOString().slice(0, 10);
 
       const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls

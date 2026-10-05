@@ -40,6 +40,10 @@ const HomePage: React.FC<HomePageProps> = ({ onRequestQuote, onTripSelect }) => 
     navigate(`/destinations/${regionId}`);
   };
 
+  const handleThemeSelect = (themeId: string) => {
+    navigate(`/themes/${themeId}`);
+  };
+
   return (
     <div className="animate-in fade-in duration-700">
       <Hero onRequestQuote={onRequestQuote} />
@@ -52,7 +56,7 @@ const HomePage: React.FC<HomePageProps> = ({ onRequestQuote, onTripSelect }) => 
         />
       </div>
       <RegionalSection onRegionSelect={handleRegionSelect} />
-      <ThemesSection onThemeSelect={handleFilterChange} />
+      <ThemesSection onThemeSelect={handleThemeSelect} />
       <SocialProof />
       <GuideSection />
     </div>

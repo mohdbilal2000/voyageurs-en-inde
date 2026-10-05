@@ -5,11 +5,7 @@ import LegalModal from './LegalModal';
 
 type LegalPage = 'privacy' | 'cgv' | 'mentions';
 
-interface FooterProps {
-  onFilterSelect?: (filter: string) => void;
-}
-
-const Footer: React.FC<FooterProps> = ({ onFilterSelect }) => {
+const Footer: React.FC = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
@@ -24,15 +20,13 @@ const Footer: React.FC<FooterProps> = ({ onFilterSelect }) => {
     }
   };
 
-  const handleFooterNav = (filter: string) => {
-    if (onFilterSelect) {
-      onFilterSelect(filter);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
   const handleFooterRegionNav = (regionId: string) => {
     navigate(`/destinations/${regionId}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleFooterThemeNav = (themeId: string) => {
+    navigate(`/themes/${themeId}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -89,7 +83,7 @@ const Footer: React.FC<FooterProps> = ({ onFilterSelect }) => {
               </li>
               <li onClick={() => handleFooterRegionNav('nord')} className="hover:text-saffron transition-colors cursor-pointer flex items-center group">
                 <span className="w-0 group-hover:w-4 transition-all overflow-hidden mr-0 group-hover:mr-2">&rarr;</span>
-                Varanasi & Gange
+                Delhi, Agra & Taj Mahal
               </li>
             </ul>
           </div>
@@ -98,10 +92,10 @@ const Footer: React.FC<FooterProps> = ({ onFilterSelect }) => {
           <div>
             <h4 className="font-bold uppercase tracking-widest text-[10px] mb-8 text-slate-400">Thematiques</h4>
             <ul className="space-y-4 text-sm text-slate-500">
-              <li onClick={() => handleFooterNav('Culture')} className="hover:text-saffron transition-colors cursor-pointer">Lunes de Miel d'Exception</li>
-              <li onClick={() => handleFooterNav('Safari')} className="hover:text-saffron transition-colors cursor-pointer">Expeditions Gastronomiques</li>
-              <li onClick={() => handleFooterNav('Nature')} className="hover:text-saffron transition-colors cursor-pointer">Retraites Spirituelles</li>
-              <li onClick={() => handleFooterNav('Himalaya')} className="hover:text-saffron transition-colors cursor-pointer">Aventures en Altitude</li>
+              <li onClick={() => handleFooterThemeNav('culture')} className="hover:text-saffron transition-colors cursor-pointer">Culture & Palais</li>
+              <li onClick={() => handleFooterThemeNav('nature')} className="hover:text-saffron transition-colors cursor-pointer">Nature & Zen</li>
+              <li onClick={() => handleFooterThemeNav('aventure')} className="hover:text-saffron transition-colors cursor-pointer">Aventure & Trek</li>
+              <li onClick={() => handleFooterThemeNav('spiritualite')} className="hover:text-saffron transition-colors cursor-pointer">Spiritualité</li>
             </ul>
           </div>
 

@@ -7,11 +7,11 @@ interface HeaderProps {
   onNavigateHome: () => void;
   onRequestQuote: () => void;
   onNavigate: (page: Page) => void;
-  onFilterSelect: (filter: string) => void;
   onRegionSelect: (regionId: string) => void;
+  onThemeSelect: (themeId: string) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onNavigateHome, onRequestQuote, onNavigate, onFilterSelect, onRegionSelect }) => {
+const Header: React.FC<HeaderProps> = ({ onNavigateHome, onRequestQuote, onNavigate, onRegionSelect, onThemeSelect }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -35,14 +35,14 @@ const Header: React.FC<HeaderProps> = ({ onNavigateHome, onRequestQuote, onNavig
     setMobileOpen(false);
   };
 
-  const handleFilterClick = (filter: string) => {
-    onFilterSelect(filter);
+  const handleRegionClick = (regionId: string) => {
+    onRegionSelect(regionId);
     setActiveMenu(null);
     setMobileOpen(false);
   };
 
-  const handleRegionClick = (regionId: string) => {
-    onRegionSelect(regionId);
+  const handleThemeClick = (themeId: string) => {
+    onThemeSelect(themeId);
     setActiveMenu(null);
     setMobileOpen(false);
   };
@@ -115,7 +115,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigateHome, onRequestQuote, onNavig
                   {THEMES.map(t => (
                     <button
                       key={t.id}
-                      onClick={() => handleFilterClick(t.name.split(' ')[0])}
+                      onClick={() => handleThemeClick(t.id)}
                       className="w-full text-left px-4 py-3 hover:bg-slate-50 rounded-xl transition-all flex items-center justify-between group/item"
                     >
                       <span className="font-serif text-sm group-hover/item:text-saffron transition-colors">{t.name}</span>
@@ -186,7 +186,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigateHome, onRequestQuote, onNavig
             {THEMES.map(t => (
               <button
                 key={t.id}
-                onClick={() => handleFilterClick(t.name.split(' ')[0])}
+                onClick={() => handleThemeClick(t.id)}
                 className="py-3 px-2 text-left font-serif text-lg hover:text-saffron transition-colors"
               >
                 {t.name}

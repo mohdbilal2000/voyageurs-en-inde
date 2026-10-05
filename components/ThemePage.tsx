@@ -3,35 +3,34 @@ import React, { useMemo } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { useSiteData } from '../store/siteStore';
 import { useSeo } from '../hooks/useSeo';
-import { generateRegionFaq } from '../utils/regionFaq';
-import { tripsForRegion } from '../utils/regionMatch';
+import { generateThemeFaq } from '../utils/themeFaq';
 import Breadcrumb from './Breadcrumb';
 import FAQSection from './FAQSection';
 
-interface RegionPageProps {
+interface ThemePageProps {
   onRequestQuote: () => void;
 }
 
-const RegionPage: React.FC<RegionPageProps> = ({ onRequestQuote }) => {
-  const { regionId } = useParams<{ regionId: string }>();
-  const { regions: REGIONS, trips: TRIPS } = useSiteData();
+const ThemePage: React.FC<ThemePageProps> = ({ onRequestQuote }) => {
+  const { themeId } = useParams<{ themeId: string }>();
+  const { themes: THEMES, trips: TRIPS } = useSiteData();
 
-  const region = REGIONS.find((r) => r.id === regionId);
+  const theme = THEMES.find((t) => t.id === themeId);
 
-  const regionTrips = useMemo(() => {
-    if (!region) return [];
-    return tripsForRegion(TRIPS, region.id);
-  }, [region, TRIPS]);
+  const themeTrips = useMemo(() => {
+    if (!theme) return [];
+    return TRIPS.filter((t) => theme.name.toLowerCase().includes(t.theme.toLowerCase()));
+  }, [theme, TRIPS]);
 
   useSeo({
-    title: region ? `Voyage ${region.name} Sur Mesure | Voyageurs en Inde` : 'Voyageurs en Inde',
-    description: region
-      ? `Découvrez nos circuits sur mesure au ${region.name} : itinéraires privatifs, guides francophones, hébergements de charme. Devis gratuit sous 24h.`
+    title: theme ? `Voyage ${theme.name} en Inde | Voyageurs en Inde` : 'Voyageurs en Inde',
+    description: theme
+      ? `Découvrez nos circuits sur le thème ${theme.name} en Inde : itinéraires privatifs, guides francophones, hébergements de charme. Devis gratuit sous 24h.`
       : undefined,
-    path: region ? `/destinations/${region.id}` : '/',
+    path: theme ? `/themes/${theme.id}` : '/',
   });
 
-  if (!region) {
+  if (!theme) {
     return <Navigate to="/" replace />;
   }
 
@@ -39,7 +38,7 @@ const RegionPage: React.FC<RegionPageProps> = ({ onRequestQuote }) => {
     <div className="bg-white pt-20">
       {/* Hero */}
       <div className="relative h-[55vh] min-h-[420px] overflow-hidden">
-        <img src={region.image} alt={region.name} className="w-full h-full object-cover" />
+        <img src={theme.image} alt={theme.name} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40" />
         <div className="absolute top-8 left-0 right-0 px-6">
           <div className="max-w-7xl mx-auto">
@@ -47,18 +46,20 @@ const RegionPage: React.FC<RegionPageProps> = ({ onRequestQuote }) => {
               dark
               items={[
                 { label: 'Accueil', path: '/' },
-                { label: 'Destinations', path: '/' },
-                { label: region.name },
+                { label: 'Vos Envies', path: '/' },
+                { label: theme.name },
               ]}
             />
           </div>
         </div>
         <div className="absolute bottom-16 left-0 right-0 px-6">
           <div className="max-w-7xl mx-auto text-white">
-            <span className="text-fr-red text-xs font-black uppercase tracking-[0.4em] mb-4 block">Destination</span>
-            <h1 className="text-5xl md:text-7xl font-serif">{region.name}</h1>
+            <span className="text-fr-red text-xs font-black uppercase tracking-[0.4em] mb-4 block">
+              {theme.icon} Thématique
+            </span>
+            <h1 className="text-5xl md:text-7xl font-serif">{theme.name}</h1>
             <p className="mt-4 text-lg font-light max-w-2xl opacity-90">
-              {regionTrips.length} circuit{regionTrips.length > 1 ? 's' : ''} sur mesure, accompagnés par nos guides francophones.
+              {themeTrips.length} circuit{themeTrips.length > 1 ? 's' : ''} sur mesure, accompagnés par nos guides francophones.
             </p>
           </div>
         </div>
@@ -66,9 +67,9 @@ const RegionPage: React.FC<RegionPageProps> = ({ onRequestQuote }) => {
 
       {/* Trip Grid */}
       <section className="max-w-7xl mx-auto px-6 py-24">
-        {regionTrips.length > 0 ? (
+        {themeTrips.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {regionTrips.map((trip) => (
+            {themeTrips.map((trip) => (
               <Link
                 key={trip.id}
                 to={`/circuits/${trip.slug}`}
@@ -84,7 +85,7 @@ const RegionPage: React.FC<RegionPageProps> = ({ onRequestQuote }) => {
                   <div className="flex items-center space-x-3 mb-3">
                     <span className="text-[10px] font-black uppercase tracking-[0.2em] text-fr-red">{trip.duration}</span>
                     <div className="w-1 h-1 bg-white/40 rounded-full" />
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/70">{trip.theme}</span>
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/70">{trip.region}</span>
                   </div>
                   <h3 className="text-2xl font-serif text-white mb-6 leading-tight">{trip.title}</h3>
                   <div className="flex items-center justify-between pt-6 border-t border-white/10">
@@ -99,16 +100,16 @@ const RegionPage: React.FC<RegionPageProps> = ({ onRequestQuote }) => {
           </div>
         ) : (
           <div className="max-w-3xl mx-auto text-center text-slate-500">
-            Aucun circuit publié pour cette région pour le moment. Contactez-nous pour un itinéraire 100% sur mesure.
+            Aucun circuit publié sur cette thématique pour le moment. Contactez-nous pour un itinéraire 100% sur mesure.
           </div>
         )}
       </section>
 
-      <FAQSection items={generateRegionFaq(region, regionTrips.length)} schemaId="region-faq-schema" />
+      <FAQSection items={generateThemeFaq(theme, themeTrips.length)} schemaId="theme-faq-schema" />
 
       <section className="bg-slate-900 py-24 text-center">
         <div className="max-w-2xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-serif text-white mb-6 italic">Envie d'un voyage sur mesure au {region.name} ?</h2>
+          <h2 className="text-3xl md:text-4xl font-serif text-white mb-6 italic">Envie d'un voyage {theme.name} sur mesure ?</h2>
           <button
             onClick={onRequestQuote}
             className="px-12 py-5 bg-fr-red text-white rounded-full font-black uppercase tracking-[0.2em] hover:bg-white hover:text-slate-900 transition-all text-[11px]"
@@ -121,4 +122,4 @@ const RegionPage: React.FC<RegionPageProps> = ({ onRequestQuote }) => {
   );
 };
 
-export default RegionPage;
+export default ThemePage;

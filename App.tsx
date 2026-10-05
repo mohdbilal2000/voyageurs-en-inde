@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import HomePage from './components/HomePage';
 import TripDetailPage from './components/TripDetailPage';
 import RegionPage from './components/RegionPage';
+import ThemePage from './components/ThemePage';
 import AboutPage from './components/AboutPage';
 import GuideSection from './components/GuideSection';
 import QuoteForm from './components/QuoteForm';
@@ -56,15 +57,12 @@ const App: React.FC = () => {
     navigate('/');
   };
 
-  const handleFilterSelect = (filter: string) => {
-    navigate(filter === 'all' ? '/' : `/?filter=${encodeURIComponent(filter)}`);
-    setTimeout(() => {
-      document.getElementById('trips-grid')?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
-  };
-
   const handleRegionSelect = (regionId: string) => {
     navigate(`/destinations/${regionId}`);
+  };
+
+  const handleThemeSelect = (themeId: string) => {
+    navigate(`/themes/${themeId}`);
   };
 
   const handleNavigate = (page: Page) => {
@@ -81,8 +79,8 @@ const App: React.FC = () => {
       <Header
         onNavigateHome={handleNavigateHome}
         onRequestQuote={openQuoteForm}
-        onFilterSelect={handleFilterSelect}
         onRegionSelect={handleRegionSelect}
+        onThemeSelect={handleThemeSelect}
         onNavigate={handleNavigate}
       />
 
@@ -101,12 +99,13 @@ const App: React.FC = () => {
             }
           />
           <Route path="/destinations/:regionId" element={<RegionPage onRequestQuote={openQuoteForm} />} />
+          <Route path="/themes/:themeId" element={<ThemePage onRequestQuote={openQuoteForm} />} />
           <Route path="/conseils" element={<GuidesPage />} />
           <Route path="/a-propos" element={<AboutRoute />} />
         </Routes>
       </main>
 
-      <Footer onFilterSelect={handleFilterSelect} />
+      <Footer />
 
       {/* Persistent Mobile CTA */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-lg border-t border-slate-200 z-40">

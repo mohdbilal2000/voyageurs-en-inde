@@ -25,7 +25,7 @@ const ThemesSection: React.FC<ThemesSectionProps> = ({ onThemeSelect }) => {
           {THEMES.map((theme) => (
             <div 
               key={theme.id} 
-              onClick={() => onThemeSelect(theme.name.split(' ')[0])}
+              onClick={() => onThemeSelect(theme.id)}
               className="relative group h-72 overflow-hidden rounded-[2.5rem] cursor-pointer shadow-xl active:scale-95 transition-transform"
             >
               <img 
