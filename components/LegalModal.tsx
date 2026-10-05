@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 
-type LegalPage = 'privacy' | 'cgv' | 'mentions';
+export type LegalPage = 'privacy' | 'cgv' | 'mentions';
 
 interface LegalModalProps {
   page: LegalPage;
@@ -63,7 +63,7 @@ const CompanyIdentity = () => (
   </ul>
 );
 
-const PrivacyContent = () => (
+export const PrivacyContent = () => (
   <div>
     <p className="text-slate-500 mb-4">Derniere mise a jour : 5 octobre 2026</p>
 
@@ -103,7 +103,7 @@ const PrivacyContent = () => (
   </div>
 );
 
-const CGVContent = () => (
+export const CGVContent = () => (
   <div>
     <p className="text-slate-500 mb-4">Derniere mise a jour : 6 octobre 2026</p>
 
@@ -172,7 +172,7 @@ const CGVContent = () => (
   </div>
 );
 
-const MentionsContent = () => (
+export const MentionsContent = () => (
   <div>
     <SectionTitle>Editeur du site</SectionTitle>
     <CompanyIdentity />

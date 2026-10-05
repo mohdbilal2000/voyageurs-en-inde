@@ -32,6 +32,9 @@ function llmsTxtPlugin(): Plugin {
 - [Accueil](${SITE_URL}/): présentation de l'agence et liste de tous les circuits
 - [Conseils de voyage](${SITE_URL}/conseils): guides pratiques (visa, météo, culture) pour préparer un voyage en Inde
 - [L'Agence](${SITE_URL}/a-propos): histoire, valeurs et équipe de Voyageurs en Inde
+- [Politique de Confidentialité](${SITE_URL}/politique-de-confidentialite)
+- [Conditions Générales de Vente](${SITE_URL}/conditions-generales-de-vente)
+- [Mentions Légales](${SITE_URL}/mentions-legales)
 
 ## Destinations
 
@@ -48,8 +51,8 @@ ${tripLines}
 ## Contact
 
 - Téléphone / WhatsApp: +91 750 583 3393
-- Email: tajguides@gmail.com
-- Adresse: 45 Sai Vihar, Pushpanjali Puram Ph-1, Near Hotel Marriott, Agra 282001, Inde
+- Email: voyageurseninde@gmail.com
+- Adresse: 45 Sai Vihar, Pushpanjali Puram, Phase 1, Taj Nagar, Phase 2, Agra 282001, Inde
 `;
 
       writeFileSync(path.resolve(__dirname, 'dist/llms.txt'), content, 'utf-8');
@@ -63,7 +66,7 @@ function sitemapPlugin(): Plugin {
     name: 'generate-sitemap',
     apply: 'build',
     closeBundle() {
-      const staticRoutes = ['/', '/conseils', '/a-propos'];
+      const staticRoutes = ['/', '/conseils', '/a-propos', '/politique-de-confidentialite', '/conditions-generales-de-vente', '/mentions-legales'];
       const tripRoutes = TRIPS.map((t) => `/circuits/${t.slug}`);
       const regionRoutes = REGIONS.map((r) => `/destinations/${r.id}`);
       const themeRoutes = THEMES.map((t) => `/themes/${t.id}`);

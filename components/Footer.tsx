@@ -1,15 +1,11 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import LegalModal from './LegalModal';
-
-type LegalPage = 'privacy' | 'cgv' | 'mentions';
 
 const Footer: React.FC = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
-  const [legalPage, setLegalPage] = useState<LegalPage | null>(null);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -125,13 +121,12 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-slate-200 text-[9px] text-slate-400 font-bold uppercase tracking-widest space-y-4 md:space-y-0">
           <p>&copy; 2026 Voyageurs en Inde. Tous droits reserves.</p>
           <div className="flex space-x-6">
-            <span className="cursor-pointer hover:text-slate-900 transition-colors" onClick={() => setLegalPage('privacy')}>Politique de Confidentialite</span>
-            <span className="cursor-pointer hover:text-slate-900 transition-colors" onClick={() => setLegalPage('cgv')}>CGV</span>
-            <span className="cursor-pointer hover:text-slate-900 transition-colors" onClick={() => setLegalPage('mentions')}>Mentions Legales</span>
+            <span className="cursor-pointer hover:text-slate-900 transition-colors" onClick={() => navigate('/politique-de-confidentialite')}>Politique de Confidentialite</span>
+            <span className="cursor-pointer hover:text-slate-900 transition-colors" onClick={() => navigate('/conditions-generales-de-vente')}>CGV</span>
+            <span className="cursor-pointer hover:text-slate-900 transition-colors" onClick={() => navigate('/mentions-legales')}>Mentions Legales</span>
           </div>
         </div>
       </div>
-      {legalPage && <LegalModal page={legalPage} onClose={() => setLegalPage(null)} />}
     </footer>
   );
 };
