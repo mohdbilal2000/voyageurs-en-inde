@@ -121,7 +121,7 @@ const Footer: React.FC<FooterProps> = ({ onFilterSelect }) => {
                 <a href="mailto:tajguides@gmail.com" className="text-slate-900 font-medium underline cursor-pointer hover:text-saffron transition-colors">tajguides@gmail.com</a>
               </li>
               <li className="pt-6 flex space-x-6">
-                 <a href="https://www.tripadvisor.com" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-saffron text-[10px] font-bold uppercase tracking-widest">TripAdvisor</a>
+                 <a href="https://www.tripadvisor.com/Attraction_Review-g797802-d33065332-Reviews-Heritage_Trail_of_Agra_Guided_Tour_of_Taj_Mahal_Agra_Fort_Fatehpur_Sikri_Local_W.html" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-saffron text-[10px] font-bold uppercase tracking-widest">TripAdvisor</a>
                  <a href="https://wa.me/917505833393" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-saffron text-[10px] font-bold uppercase tracking-widest">WhatsApp</a>
               </li>
             </ul>
