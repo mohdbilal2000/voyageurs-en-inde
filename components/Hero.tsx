@@ -17,8 +17,8 @@ const Hero: React.FC<HeroProps> = ({ onRequestQuote }) => {
     <div className="relative h-screen min-h-[750px] flex items-center justify-center overflow-hidden">
       {/* Background with subtle Zoom Effect */}
       <div className="absolute inset-0">
-        <img 
-          src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2500&auto=format&fit=crop"
+        <img
+          src="/photos/taj-mahal-sunset.jpg"
           alt="Taj Mahal Sunrise"
           className="w-full h-full object-cover animate-in fade-in duration-1000 zoom-in-105"
         />

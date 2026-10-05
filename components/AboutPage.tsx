@@ -17,7 +17,7 @@ const AboutPage: React.FC = () => {
         </div>
         <div className="absolute right-0 top-0 bottom-0 w-1/3 hidden lg:block opacity-10">
            <img 
-            src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop" 
+            src="/photos/agra-fort.jpg"
             className="h-full w-full object-cover grayscale" 
             alt="Atmosphère Inde"
            />
