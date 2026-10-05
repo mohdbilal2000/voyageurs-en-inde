@@ -10,6 +10,8 @@ const Footer: React.FC = () => {
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
+      const message = `Je souhaite rejoindre le cercle Voyageurs en Inde (newsletter).\nMon email : ${email}`;
+      window.open(`https://wa.me/917505833393?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
       setSubscribed(true);
       setEmail('');
       setTimeout(() => setSubscribed(false), 5000);
@@ -56,7 +58,7 @@ const Footer: React.FC = () => {
                      {subscribed ? '\u2713' : '\u2192'}
                    </button>
                  </div>
-                 {subscribed && <p className="text-[10px] text-green-600 uppercase font-bold tracking-widest animate-fade-in">Bienvenue parmi nous.</p>}
+                 {subscribed && <p className="text-[10px] text-green-600 uppercase font-bold tracking-widest animate-fade-in">Message WhatsApp pret a envoyer.</p>}
                </form>
             </div>
           </div>
