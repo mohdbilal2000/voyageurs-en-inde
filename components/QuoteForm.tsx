@@ -20,13 +20,40 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onClose }) => {
     notes: ''
   });
 
+  const WHATSAPP_NUMBER = '917505833393';
+
+  const buildWhatsAppMessage = () => {
+    const guestsLabel: Record<string, string> = {
+      '1': 'Solo',
+      '2': 'Couple (2 pers.)',
+      family: 'Famille / Petit Groupe (3-6)',
+      large: 'Grand Groupe (7+)',
+    };
+    const lines = [
+      'Nouvelle demande de devis - Voyageurs en Inde',
+      '',
+      `Destination souhaitee : ${formData.destination || 'Non precisee'}`,
+      `Voyageurs : ${guestsLabel[formData.guests] || formData.guests}`,
+      `Date prevue : ${formData.date || 'Non precisee'}`,
+      `Budget estime : ${Number(formData.budget).toLocaleString()}€+ par personne`,
+      '',
+      `Nom : ${formData.name}`,
+      `Email : ${formData.email}`,
+      formData.phone ? `Telephone : ${formData.phone}` : null,
+      formData.notes ? `\nDetails : ${formData.notes}` : null,
+    ].filter(Boolean);
+    return lines.join('\n');
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (step < 2) {
       setStep(step + 1);
     } else {
       setIsSubmitting(true);
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const message = buildWhatsAppMessage();
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+      await new Promise(resolve => setTimeout(resolve, 600));
       setIsSubmitting(false);
       setIsSubmitted(true);
     }
@@ -39,7 +66,7 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onClose }) => {
         <div className="relative bg-white w-full max-w-lg rounded-[2.5rem] shadow-2xl p-12 text-center animate-in zoom-in duration-300">
            <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-4xl mx-auto mb-8 animate-bounce">✓</div>
            <h2 className="text-3xl font-serif mb-4 italic">Demande Reçue</h2>
-           <p className="text-slate-500 mb-8 leading-relaxed">Notre architecte de voyage va examiner vos détails et vous contactera sous 24 heures pour commencer à concevoir votre itinéraire.</p>
+           <p className="text-slate-500 mb-8 leading-relaxed">Votre demande a été préparée sur WhatsApp dans un nouvel onglet — il ne vous reste plus qu'à l'envoyer. Notre équipe vous répond généralement sous 24 heures.</p>
            <button 
              onClick={onClose}
              className="w-full bg-fr-red text-white py-4 rounded-full font-bold uppercase tracking-widest hover:bg-slate-900 transition-all text-xs"
