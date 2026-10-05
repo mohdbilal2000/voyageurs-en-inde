@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useSiteData } from '../store/siteStore';
 
 interface GuideSectionProps {
@@ -17,15 +18,15 @@ const GuideSection: React.FC<GuideSectionProps> = ({ fullPage = false }) => {
             <p className="text-slate-500">Conseils, récits et inspirations de nos experts pour préparer votre prochain voyage en Inde.</p>
           </div>
           {!fullPage && (
-            <button className="text-slate-900 font-bold border-b-2 border-slate-900 pb-1 uppercase text-xs tracking-widest hover:text-slate-600 hover:border-slate-300 transition-all">
+            <Link to="/conseils" className="text-slate-900 font-bold border-b-2 border-slate-900 pb-1 uppercase text-xs tracking-widest hover:text-slate-600 hover:border-slate-300 transition-all">
               Voir tous les guides
-            </button>
+            </Link>
           )}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {GUIDES.map((guide) => (
-            <article key={guide.id} className="group cursor-pointer">
+            <Link to={`/conseils/${guide.slug}`} key={guide.id} className="group block">
               <div className="aspect-video overflow-hidden rounded-2xl mb-6 shadow-sm">
                 <img 
                   src={guide.image} 
@@ -47,7 +48,7 @@ const GuideSection: React.FC<GuideSectionProps> = ({ fullPage = false }) => {
                 Lire l'article
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

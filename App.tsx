@@ -10,6 +10,7 @@ import ThemePage from './components/ThemePage';
 import AboutPage from './components/AboutPage';
 import LegalPage from './components/LegalPage';
 import GuideSection from './components/GuideSection';
+import GuidePage from './components/GuidePage';
 import QuoteForm from './components/QuoteForm';
 import { Page, Trip } from './types';
 import { useSeo } from './hooks/useSeo';
@@ -110,6 +111,7 @@ const App: React.FC = () => {
           <Route path="/destinations/:regionId" element={<RegionPage key={location.pathname} onRequestQuote={openQuoteForm} />} />
           <Route path="/themes/:themeId" element={<ThemePage key={location.pathname} onRequestQuote={openQuoteForm} />} />
           <Route path="/conseils" element={<GuidesPage />} />
+          <Route path="/conseils/:slug" element={<GuidePage key={location.pathname} />} />
           <Route path="/a-propos" element={<AboutRoute />} />
           <Route path="/politique-de-confidentialite" element={<LegalPage page="privacy" />} />
           <Route path="/conditions-generales-de-vente" element={<LegalPage page="cgv" />} />

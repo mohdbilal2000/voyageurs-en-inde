@@ -49,13 +49,21 @@ export interface Region {
   image: string;
 }
 
+export interface GuideSection {
+  heading: string;
+  body: string;
+}
+
 export interface Guide {
   id: string;
+  /** URL slug; auto-derived from the title if left unset (see utils/guideSlugs). */
+  slug?: string;
   category: 'Visa' | 'Météo' | 'Culture' | 'Conseils';
   title: string;
   excerpt: string;
   image: string;
   readTime: string;
+  content?: GuideSection[];
 }
 
 export interface SiteData {

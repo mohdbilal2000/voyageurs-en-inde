@@ -2941,7 +2941,25 @@
       "title": "Preparer son premier voyage en Inde",
       "excerpt": "Visas, vaccins et conseils de valise : tout ce qu'il faut savoir avant le depart.",
       "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop",
-      "readTime": "8 min de lecture"
+      "readTime": "8 min de lecture",
+      "content": [
+        {
+          "heading": "Le visa pour l'Inde",
+          "body": "La grande majorite des visiteurs francophones peuvent obtenir un e-Visa pour l'Inde directement en ligne, sans passer par une ambassade. La demande se fait sur le site officiel du gouvernement indien, generalement entre un mois et quelques jours avant le depart. Les frais et la duree de validite evoluent regulierement : nous verifions toujours les conditions a jour avec vous avant votre voyage et pouvons vous accompagner dans la demarche."
+        },
+        {
+          "heading": "Vaccins et sante",
+          "body": "Aucun vaccin n'est officiellement obligatoire pour entrer en Inde au depart de la France, mais il est recommande d'etre a jour de ses vaccins universels (DTP, hepatite A et B, typhoide) et de consulter un centre de vaccinations internationales 4 a 6 semaines avant le depart. Votre medecin pourra adapter ces recommandations selon les regions visitees et votre etat de sante. Une assurance voyage couvrant les frais medicaux et le rapatriement est vivement conseillee."
+        },
+        {
+          "heading": "Que mettre dans sa valise",
+          "body": "Privilegiez des vetements legers et respirants en coton ou lin, avec quelques tenues plus couvrantes pour la visite des temples et mosquees (epaules et genoux couverts). En hiver (decembre-fevrier), les matinees dans le nord de l'Inde et au Rajasthan peuvent etre fraiches : une polaire ou veste legere est utile. N'oubliez pas des chaussures confermes et faciles a enlever (tres pratique pour les lieux de culte), de la creme solaire, un repulsif anti-moustiques et un adaptateur electrique universel."
+        },
+        {
+          "heading": "Argent et paiements",
+          "body": "La monnaie locale est la roupie indienne (INR). Les cartes bancaires internationales sont largement acceptees dans les hotels et restaurants des grandes villes, mais prevoyez toujours un peu d'especes pour les marches, petits commerces et pourboires. Les distributeurs automatiques sont nombreux dans les villes touristiques comme Delhi, Agra ou Jaipur."
+        }
+      ]
     },
     {
       "id": "g2",
@@ -2949,7 +2967,25 @@
       "title": "La cuisine indienne : un festival de saveurs",
       "excerpt": "Du thali du sud aux epices du Rajasthan, guide gastronomique pour gourmets.",
       "image": "https://images.unsplash.com/photo-1517244683847-7456b63c5969?q=80&w=1200&auto=format&fit=crop",
-      "readTime": "6 min de lecture"
+      "readTime": "6 min de lecture",
+      "content": [
+        {
+          "heading": "Le Nord : richesse moghole et pain",
+          "body": "La cuisine du nord de l'Inde, celle que l'on connait souvent le mieux en France, est marquee par l'heritage moghol : currys cremeux (butter chicken, korma), pains au four (naan, roti, paratha) et brochettes marinees cuites au four tandoor. Le Rajasthan apporte sa propre identite avec des plats comme le dal baati churma, nes de l'adaptation a un climat desertique ou les legumes frais se faisaient rares."
+        },
+        {
+          "heading": "Le Sud : riz, coco et epices fraiches",
+          "body": "Dans le sud de l'Inde (Kerala, Tamil Nadu, Karnataka), le riz remplace le pain comme base de l'alimentation. On y decouvre les dosas (crepes de riz et lentilles fermentees), les idlis (petits gateaux de riz vapeur) et des currys parfumes a la noix de coco, au tamarin et aux feuilles de curry fraiches. Le thali, assortiment de petites preparations servies sur un plateau, est la meilleure facon de gouter plusieurs specialites en un seul repas."
+        },
+        {
+          "heading": "Une cuisine largement vegetarienne",
+          "body": "Une grande partie de l'Inde est traditionnellement vegetarienne, pour des raisons religieuses et culturelles. Vous trouverez partout une offre vegetarienne riche et savoureuse, des lentilles (dal) aux legumes mijotes en passant par le paneer (fromage frais indien). Les plats non-vegetariens restent neanmoins courants, en particulier le poulet et l'agneau."
+        },
+        {
+          "heading": "Quelques conseils pratiques",
+          "body": "Le niveau d'epices peut etre ajuste sur demande, en particulier dans les restaurants touristiques. Il est frequent de manger avec les doigts de la main droite, surtout pour les plats a base de riz. Pour les palais sensibles, commencez en douceur et laissez votre tube digestif s'habituer progressivement aux saveurs locales avant de vous aventurer dans la cuisine de rue."
+        }
+      ]
     }
   ]
 }

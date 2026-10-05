@@ -2,7 +2,7 @@ import path from 'path';
 import { writeFileSync } from 'fs';
 import { defineConfig, loadEnv, Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
-import { TRIPS, REGIONS, THEMES } from './constants';
+import { TRIPS, REGIONS, THEMES, GUIDES } from './constants';
 
 const SITE_URL = 'https://www.voyageurseninde.fr';
 
@@ -21,6 +21,10 @@ function llmsTxtPlugin(): Plugin {
 
       const themeLines = THEMES.map(
         (t) => `- [${t.name}](${SITE_URL}/themes/${t.id}): tous les circuits sur le thème ${t.name}`
+      ).join('\n');
+
+      const guideLines = GUIDES.map(
+        (g) => `- [${g.title}](${SITE_URL}/conseils/${g.slug}): ${g.excerpt}`
       ).join('\n');
 
       const content = `# Voyageurs en Inde
@@ -48,6 +52,10 @@ ${themeLines}
 
 ${tripLines}
 
+## Guides de voyage
+
+${guideLines}
+
 ## Contact
 
 - Téléphone / WhatsApp: +91 750 583 3393
@@ -70,7 +78,8 @@ function sitemapPlugin(): Plugin {
       const tripRoutes = TRIPS.map((t) => `/circuits/${t.slug}`);
       const regionRoutes = REGIONS.map((r) => `/destinations/${r.id}`);
       const themeRoutes = THEMES.map((t) => `/themes/${t.id}`);
-      const urls = [...staticRoutes, ...regionRoutes, ...themeRoutes, ...tripRoutes];
+      const guideRoutes = GUIDES.map((g) => `/conseils/${g.slug}`);
+      const urls = [...staticRoutes, ...regionRoutes, ...themeRoutes, ...guideRoutes, ...tripRoutes];
       const today = new Date().toISOString().slice(0, 10);
 
       const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls

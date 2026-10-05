@@ -2,6 +2,7 @@ import { useSyncExternalStore } from 'react';
 import { SiteData } from '../types';
 import { DEFAULT_SITE_DATA } from '../data/siteData';
 import { withTripSlugs } from '../utils/tripSlugs';
+import { withGuideSlugs } from '../utils/guideSlugs';
 
 // ---------------------------------------------------------------------------
 // Site content store
@@ -30,7 +31,7 @@ export function normalizeSiteData(input: Partial<SiteData> | null | undefined): 
     trips: withTripSlugs(Array.isArray(input?.trips) ? input!.trips : deepClone(base.trips)),
     themes: Array.isArray(input?.themes) ? input!.themes : deepClone(base.themes),
     regions: Array.isArray(input?.regions) ? input!.regions : deepClone(base.regions),
-    guides: Array.isArray(input?.guides) ? input!.guides : deepClone(base.guides),
+    guides: withGuideSlugs(Array.isArray(input?.guides) ? input!.guides : deepClone(base.guides)),
   };
 }
 
