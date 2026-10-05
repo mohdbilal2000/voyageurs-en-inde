@@ -33,7 +33,7 @@ const MapPreview: React.FC<MapPreviewProps> = ({ points, tripTitle }) => {
     mapRef.current = map;
 
     // CartoDB Voyager – closest free alternative to Google Maps style
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19
     }).addTo(map);
 

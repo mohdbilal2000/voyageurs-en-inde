@@ -44,6 +44,14 @@ const App: React.FC = () => {
   const location = useLocation();
   const [isQuoteFormOpen, setIsQuoteFormOpen] = useState(false);
 
+  // Disable the browser's native scroll restoration so it doesn't fight
+  // with our own scroll-to-top below (most noticeable on back/forward).
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+  }, []);
+
   // Scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0);
