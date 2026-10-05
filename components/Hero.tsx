@@ -18,7 +18,7 @@ const Hero: React.FC<HeroProps> = ({ onRequestQuote }) => {
       {/* Background with subtle Zoom Effect */}
       <div className="absolute inset-0">
         <img
-          src="/photos/taj-mahal-sunset.jpg"
+          src="/photos/taj-mahal-hero.jpg"
           alt="Taj Mahal Sunrise"
           className="w-full h-full object-cover animate-in fade-in duration-1000 zoom-in-105"
         />

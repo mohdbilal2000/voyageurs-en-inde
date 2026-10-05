@@ -45,28 +45,24 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Founder */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-serif mb-4 italic">Vos Spécialistes</h2>
-            <p className="text-slate-500 max-w-lg mx-auto">Une équipe d'experts passionnés par la richesse culturelle et spirituelle de l'Inde.</p>
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif mb-4 italic">Votre Guide & Fondateur</h2>
+            <p className="text-slate-500 max-w-lg mx-auto">Une présence locale, du premier contact jusqu'au dernier jour de votre voyage.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {[
-              { name: "Marc Lefebvre", role: "Spécialiste Rajasthan & Nord", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1000&auto=format&fit=crop" },
-              { name: "Anjali Singh", role: "Experte Sud & Spiritualité", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1000&auto=format&fit=crop" },
-              { name: "Julien Morel", role: "Expert Himalaya & Aventure", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000&auto=format&fit=crop" }
-            ].map((member, i) => (
-              <div key={i} className="group text-center">
-                <div className="aspect-[3/4] overflow-hidden rounded-[2.5rem] mb-8 shadow-2xl relative">
-                  <img src={member.img} alt={member.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-saffron/10 opacity-0 group-hover:opacity-100 transition-opacity" style={{backgroundColor: 'rgba(0,85,164,0.1)'}}></div>
-                </div>
-                <h4 className="text-2xl font-serif mb-1">{member.name}</h4>
-                <p className="text-fr-red uppercase text-[10px] font-black tracking-widest">{member.role}</p>
-              </div>
-            ))}
+          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+            <div className="w-56 h-72 flex-shrink-0 overflow-hidden rounded-[2.5rem] shadow-2xl">
+              <img src="/photos/shafiq-portrait.jpg" alt="Shafiq Khan, fondateur de Voyageurs en Inde" className="w-full h-full object-cover" />
+            </div>
+            <div className="text-center md:text-left">
+              <h4 className="text-3xl font-serif mb-1">Shafiq Khan</h4>
+              <p className="text-fr-red uppercase text-[10px] font-black tracking-widest mb-6">Fondateur &amp; Guide Principal</p>
+              <p className="text-slate-500 leading-relaxed font-light">
+                Guide touristique professionnel agréé par le Gouvernement de l'Inde, basé à Agra depuis 1998. Shafiq accompagne personnellement la conception de chaque circuit et reste votre interlocuteur direct, de la demande de devis jusqu'à votre retour.
+              </p>
+            </div>
           </div>
         </div>
       </section>
