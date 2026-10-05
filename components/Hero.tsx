@@ -26,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({ onRequestQuote }) => {
       </div>
 
       {/* Content Layer */}
-      <div className="relative z-10 text-center px-6 max-w-5xl">
+      <div className="relative z-10 text-center px-6 max-w-5xl mt-20 md:mt-0">
         <div className="mb-8 overflow-hidden">
           <span className="inline-block text-fr-red text-[11px] font-black tracking-[0.6em] uppercase animate-in slide-in-from-bottom-full duration-700">
             ARCHITECTES DE VOYAGES D'EXCEPTION
