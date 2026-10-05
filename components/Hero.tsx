@@ -29,13 +29,13 @@ const Hero: React.FC<HeroProps> = ({ onRequestQuote }) => {
       <div className="relative z-10 text-center px-6 max-w-5xl">
         <div className="mb-8 overflow-hidden">
           <span className="inline-block text-fr-red text-[11px] font-black tracking-[0.6em] uppercase animate-in slide-in-from-bottom-full duration-700">
-            L'ÉVASION SUR MESURE EN INDE
+            ARCHITECTES DE VOYAGES D'EXCEPTION
           </span>
         </div>
         
         <h1 className="text-6xl md:text-9xl text-white font-serif leading-[1] mb-12 animate-in fade-in duration-1000 delay-300">
-          La Vie Sauvage <br /> 
-          <span className="italic font-normal">Avec Voyageurs en Inde</span>
+          Une Évasion <br />
+          <span className="italic font-normal">Sur Mesure en Inde</span>
         </h1>
         
         {/* Search Bar / Action Bar */}

@@ -103,8 +103,8 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold uppercase tracking-widest text-[10px] mb-8 text-slate-400">Nous Contacter</h4>
             <ul className="space-y-4 text-sm text-slate-500">
-              <li>45 Sai Vihar, Pushpanjali Puram Ph-1</li>
-              <li>Near Hotel Marriott, Agra 282001, Inde</li>
+              <li>45 Sai Vihar, Pushpanjali Puram, Phase 1</li>
+              <li>Taj Nagar, Phase 2, Agra 282001, Inde</li>
               <li>
                 <a href="tel:+917505833393" className="text-slate-900 font-medium hover:text-saffron transition-colors">+91 750 583 3393</a>
               </li>
@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
                 <a href="https://wa.me/917505833393" target="_blank" rel="noopener noreferrer" className="text-slate-900 font-medium hover:text-saffron transition-colors">WhatsApp</a>
               </li>
               <li>
-                <a href="mailto:tajguides@gmail.com" className="text-slate-900 font-medium underline cursor-pointer hover:text-saffron transition-colors">tajguides@gmail.com</a>
+                <a href="mailto:voyageurseninde@gmail.com" className="text-slate-900 font-medium underline cursor-pointer hover:text-saffron transition-colors">voyageurseninde@gmail.com</a>
               </li>
               <li className="pt-6 flex space-x-6">
                  <a href="https://www.tripadvisor.com/Attraction_Review-g797802-d33065332-Reviews-Heritage_Trail_of_Agra_Guided_Tour_of_Taj_Mahal_Agra_Fort_Fatehpur_Sikri_Local_W.html" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-saffron text-[10px] font-bold uppercase tracking-widest">TripAdvisor</a>
