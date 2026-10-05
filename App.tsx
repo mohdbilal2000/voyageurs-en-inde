@@ -102,12 +102,12 @@ const App: React.FC = () => {
             path="/circuits/:slug"
             element={
               <div className="pt-20">
-                <TripDetailPage onRequestQuote={openQuoteForm} />
+                <TripDetailPage key={location.pathname} onRequestQuote={openQuoteForm} />
               </div>
             }
           />
-          <Route path="/destinations/:regionId" element={<RegionPage onRequestQuote={openQuoteForm} />} />
-          <Route path="/themes/:themeId" element={<ThemePage onRequestQuote={openQuoteForm} />} />
+          <Route path="/destinations/:regionId" element={<RegionPage key={location.pathname} onRequestQuote={openQuoteForm} />} />
+          <Route path="/themes/:themeId" element={<ThemePage key={location.pathname} onRequestQuote={openQuoteForm} />} />
           <Route path="/conseils" element={<GuidesPage />} />
           <Route path="/a-propos" element={<AboutRoute />} />
         </Routes>

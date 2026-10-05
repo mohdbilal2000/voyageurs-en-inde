@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import AdminApp from './components/admin/AdminApp';
+import ErrorBoundary from './components/ErrorBoundary';
 import { ADMIN_PATH } from './components/admin/config';
 
 const rootElement = document.getElementById('root');
@@ -19,12 +20,14 @@ const isAdmin = path === ADMIN_PATH || path.startsWith(ADMIN_PATH + '/');
 const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    {isAdmin ? (
-      <AdminApp />
-    ) : (
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    )}
+    <ErrorBoundary>
+      {isAdmin ? (
+        <AdminApp />
+      ) : (
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      )}
+    </ErrorBoundary>
   </React.StrictMode>
 );

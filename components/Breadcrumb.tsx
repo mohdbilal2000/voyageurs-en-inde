@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const SITE_URL = 'https://www.voyageurseninde.fr';
 
@@ -14,10 +14,16 @@ interface BreadcrumbProps {
 }
 
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, dark = false }) => {
+  const location = useLocation();
+  // Scoped to the current path so two Breadcrumb instances (e.g. during a
+  // route transition) can never fight over the same <script id>.
+  const schemaId = `breadcrumb-schema-${location.pathname}`;
+  const itemsKey = items.map((i) => `${i.label}|${i.path ?? ''}`).join(',');
+
   useEffect(() => {
     const script = document.createElement('script');
     script.type = 'application/ld+json';
-    script.id = 'breadcrumb-schema';
+    script.id = schemaId;
     script.textContent = JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
@@ -30,9 +36,10 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, dark = false }) => {
     });
     document.head.appendChild(script);
     return () => {
-      document.getElementById('breadcrumb-schema')?.remove();
+      document.getElementById(schemaId)?.remove();
     };
-  }, [items]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [schemaId, itemsKey]);
 
   return (
     <nav
