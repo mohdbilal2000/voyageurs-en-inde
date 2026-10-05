@@ -364,7 +364,7 @@ const TripDetail: React.FC<TripDetailProps> = ({ trip, onRequestQuote, allTrips 
                   
                   <div className="space-y-4 mb-10">
                     <div className="flex items-center space-x-5 p-5 bg-white/5 rounded-2xl border border-white/10">
-                       <img src="/photos/shafiq-guide-taj-mahal.jpg" className="w-12 h-12 rounded-full object-cover" alt="Shafiq Khan, fondateur de Voyageurs en Inde" />
+                       <img src="/photos/shafiq-portrait.jpg" className="w-12 h-12 rounded-full object-cover" alt="Shafiq Khan, fondateur de Voyageurs en Inde" />
                        <div>
                          <p className="text-[9px] font-black uppercase tracking-widest text-slate-500">Votre Expert</p>
                          <p className="text-sm font-bold">Conseils de Shafiq Khan</p>
