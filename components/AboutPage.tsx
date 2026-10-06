@@ -102,11 +102,48 @@ const AboutPage: React.FC = () => {
               <img src="/photos/shafiq-portrait.jpg" alt="Shafiq Khan, fondateur de Voyageurs en Inde" className="w-full h-full object-cover" />
             </div>
             <div className="text-center md:text-left">
-              <h4 className="text-3xl font-serif mb-1">Shafiq Khan</h4>
-              <p className="text-fr-red uppercase text-[10px] font-black tracking-widest mb-6">Fondateur &amp; Guide Principal</p>
+              <h4 className="text-3xl font-serif mb-1">Shafiq Ahamad Khan</h4>
+              <p className="text-fr-red uppercase text-[10px] font-black tracking-widest mb-6">Directeur d'Agence &amp; Guide Touristique Francophone</p>
               <p className="text-slate-500 leading-relaxed font-light">
-                Guide touristique professionnel agréé par le Gouvernement de l'Inde, basé à Agra depuis 1998. Shafiq accompagne personnellement la conception de chaque circuit et reste votre interlocuteur direct, de la demande de devis jusqu'à votre retour.
+                Guide touristique professionnel certifié et agréé PAN India (code FSG01), base a Agra depuis plus de 20 ans. Shafiq accompagne personnellement la conception de chaque circuit et reste votre interlocuteur direct, de la demande de devis jusqu'a votre retour. Specialites : Agra, Taj Mahal, Delhi, Jaipur, Rajasthan.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Guides */}
+      <section className="py-24 bg-[#f8f9fc] border-t border-slate-100">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-xs font-bold uppercase tracking-[0.3em] text-saffron mb-6 block">Guides Certifies Gouvernement de l'Inde</span>
+            <h2 className="text-4xl md:text-5xl font-serif italic">Notre Équipe sur le Terrain</h2>
+            <p className="text-slate-500 max-w-lg mx-auto mt-4">Selon la disponibilité, votre circuit peut être accompagné par l'un de nos guides francophones certifiés.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="flex items-start gap-6">
+              <div className="w-24 h-24 flex-shrink-0 overflow-hidden rounded-full shadow-lg">
+                <img src="/photos/naimuddin.jpg" alt="Naimuddin, guide touristique francophone" className="w-full h-full object-cover" />
+              </div>
+              <div>
+                <h4 className="text-xl font-serif mb-1">Naimuddin</h4>
+                <p className="text-fr-red uppercase text-[9px] font-black tracking-widest mb-3">Guide Certifié · 20 ans d'expérience</p>
+                <p className="text-slate-500 text-sm leading-relaxed font-light">
+                  Guide francophone certifié (code FSG05), spécialiste d'Agra, Delhi, Jaipur et du Rajasthan. Passionné par l'histoire et l'architecture de l'Inde, il propose des visites vivantes et personnalisées.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-6">
+              <div className="w-24 h-24 flex-shrink-0 overflow-hidden rounded-full shadow-lg">
+                <img src="/photos/nadir-hussain.jpg" alt="Nadir Hussain, guide touristique francophone" className="w-full h-full object-cover" />
+              </div>
+              <div>
+                <h4 className="text-xl font-serif mb-1">Nadir Hussain</h4>
+                <p className="text-fr-red uppercase text-[9px] font-black tracking-widest mb-3">Guide Certifié · 16 ans d'expérience</p>
+                <p className="text-slate-500 text-sm leading-relaxed font-light">
+                  Guide francophone certifié (code FSG07), spécialiste des circuits de plusieurs jours à travers le nord et le sud de l'Inde, pour une découverte authentique de la culture indienne.
+                </p>
+              </div>
             </div>
           </div>
         </div>
