@@ -15,13 +15,20 @@ const Hero: React.FC<HeroProps> = ({ onRequestQuote }) => {
 
   return (
     <div className="relative min-h-screen bg-slate-900 flex items-center justify-center overflow-hidden">
-      {/* Background with subtle Zoom Effect — pinned to exactly one viewport height so it never
-          crops differently as the content below grows (short viewports) or the browser zoom changes. */}
-      <div className="absolute inset-x-0 top-0 h-screen">
+      {/* Background — pinned to exactly one viewport height. The photo uses object-contain so the
+          full monument is always visible and never cropped, on any screen size or browser zoom;
+          a blurred, zoomed copy of the same photo fills the edges so it still reads as full-bleed. */}
+      <div className="absolute inset-x-0 top-0 h-screen bg-slate-900">
+        <img
+          src="/photos/taj-mahal-hero.jpg"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-60"
+        />
         <img
           src="/photos/taj-mahal-hero.jpg"
           alt="Taj Mahal Sunrise"
-          className="w-full h-full object-cover animate-in fade-in duration-1000 zoom-in-105"
+          className="absolute inset-0 w-full h-full object-contain animate-in fade-in duration-1000 zoom-in-105"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/70 backdrop-blur-[0.5px]"></div>
 
