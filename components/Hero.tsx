@@ -14,7 +14,7 @@ const Hero: React.FC<HeroProps> = ({ onRequestQuote }) => {
   };
 
   return (
-    <div className="relative h-screen min-h-[750px] flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-screen py-28 flex items-center justify-center overflow-hidden">
       {/* Background with subtle Zoom Effect */}
       <div className="absolute inset-0">
         <img
