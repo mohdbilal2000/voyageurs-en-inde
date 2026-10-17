@@ -14,19 +14,25 @@ const Hero: React.FC<HeroProps> = ({ onRequestQuote }) => {
   };
 
   return (
-    <div className="relative min-h-screen py-28 flex items-center justify-center overflow-hidden">
-      {/* Background with subtle Zoom Effect */}
-      <div className="absolute inset-0">
+    <div className="relative min-h-screen bg-slate-900 flex items-center justify-center overflow-hidden">
+      {/* Background with subtle Zoom Effect — pinned to exactly one viewport height so it never
+          crops differently as the content below grows (short viewports) or the browser zoom changes. */}
+      <div className="absolute inset-x-0 top-0 h-screen">
         <img
           src="/photos/taj-mahal-hero.jpg"
           alt="Taj Mahal Sunrise"
           className="w-full h-full object-cover animate-in fade-in duration-1000 zoom-in-105"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/70 backdrop-blur-[0.5px]"></div>
+
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 opacity-50 animate-bounce cursor-pointer" onClick={scrollToTrips}>
+          <span className="text-[8px] text-white font-bold uppercase tracking-[0.3em]">Défiler</span>
+          <div className="w-0.5 h-8 bg-gradient-to-b from-white to-transparent"></div>
+        </div>
       </div>
 
       {/* Content Layer */}
-      <div className="relative z-10 text-center px-6 max-w-5xl mt-20 md:mt-0">
+      <div className="relative z-10 text-center px-6 max-w-5xl py-28 mt-20 md:mt-0">
         <div className="mb-8 overflow-hidden">
           <span className="inline-block text-fr-red text-[11px] font-black tracking-[0.6em] uppercase animate-in slide-in-from-bottom-full duration-700">
             ARCHITECTES DE VOYAGES D'EXCEPTION
@@ -82,11 +88,6 @@ const Hero: React.FC<HeroProps> = ({ onRequestQuote }) => {
               <div className="h-px w-8 bg-white/30"></div>
            </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 opacity-50 animate-bounce cursor-pointer" onClick={scrollToTrips}>
-        <span className="text-[8px] text-white font-bold uppercase tracking-[0.3em]">Défiler</span>
-        <div className="w-0.5 h-8 bg-gradient-to-b from-white to-transparent"></div>
       </div>
     </div>
   );
