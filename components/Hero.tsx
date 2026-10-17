@@ -15,9 +15,11 @@ const Hero: React.FC<HeroProps> = ({ onRequestQuote }) => {
 
   return (
     <div className="relative min-h-screen bg-slate-900 flex items-center justify-center overflow-hidden">
-      {/* Background — pinned to exactly one viewport height, independent of how tall the content
-          below grows, so the crop stays consistent regardless of browser zoom or window size. */}
-      <div className="absolute inset-x-0 top-0 h-screen">
+      {/* Background. The photo itself is a 4:3 shot, not a wide panorama, so forcing it to fill a
+          full 16:9-ish viewport with object-cover crops a lot off the top/bottom. On desktop we size
+          the box close to the photo's own ratio (minimal crop); mobile keeps a full h-screen since a
+          narrow phone viewport is already taller than the photo, so cover only trims the sides there. */}
+      <div className="absolute inset-x-0 top-0 w-full h-screen md:h-auto md:aspect-[4/3] md:max-h-[1100px]">
         <img
           src="/photos/taj-mahal-hero.jpg"
           alt="Taj Mahal Sunrise"
